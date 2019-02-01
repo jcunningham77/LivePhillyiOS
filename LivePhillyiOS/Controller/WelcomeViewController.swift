@@ -9,9 +9,23 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 20
+        registerButton.layer.cornerRadius = 20
+        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        backgroundImageView?.addSubview(blurEffectView)
+        
 
         // Do any additional setup after loading the view.
     }
