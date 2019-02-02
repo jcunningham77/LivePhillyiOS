@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: LPViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -23,9 +24,27 @@ class RegisterViewController: UIViewController {
             NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
         passwordTextField.attributedPlaceholder =
             NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
+        
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
 
+    @IBAction func register(_ sender: Any) {
+        //TODO: Set up a new user on our Firebase database
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+                print(error)
+            } else {
+                print("Registration Successful")
+                self.performSegue(withIdentifier: "registerToTabBar", sender: self)
+            }
+        }
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -36,13 +55,6 @@ class RegisterViewController: UIViewController {
     }
     */
     
-    func uiColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
+
 
 }

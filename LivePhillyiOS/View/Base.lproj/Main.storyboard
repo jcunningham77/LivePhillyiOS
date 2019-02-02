@@ -130,14 +130,14 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-U9-P0D">
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-U9-P0D">
                                 <rect key="frame" x="57" y="290" width="300" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Jup-ti-ORg"/>
                                     <constraint firstAttribute="width" constant="300" id="UxV-VL-WpP"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.0" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -152,17 +152,20 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.67843137249999996" green="0.0" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="register:" destination="NGE-XM-nV1" eventType="touchUpInside" id="UUl-86-6my"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-Vt-4nz">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="passwordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-Vt-4nz">
                                 <rect key="frame" x="57" y="360" width="300" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="9o1-Gm-XaW"/>
                                     <constraint firstAttribute="height" constant="60" id="UVW-Fz-fQX"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.0" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,11 +192,62 @@
                     <connections>
                         <outlet property="emailTextField" destination="UFk-U9-P0D" id="Fr6-gO-9pi"/>
                         <outlet property="passwordTextField" destination="bSB-Vt-4nz" id="UsY-zl-eKv"/>
+                        <segue destination="FPX-uC-SPw" kind="show" identifier="registerToTabBar" id="wUI-HN-8bT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKa-5M-BXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1931.8840579710147" y="1126.6304347826087"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="kPe-kh-L8Y">
+            <objects>
+                <viewController id="Q0r-63-9CP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Unr-Rc-ihS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9j0-VX-p1Q"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" id="C19-yB-AQT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ynk-d1-0iR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4076" y="1105"/>
+        </scene>
+        <!--Explore-->
+        <scene sceneID="E9p-Ul-gJR">
+            <objects>
+                <viewController id="ULI-iK-B8p" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ndo-wD-aHs" customClass="UITableView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="e6x-UN-f9z"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Explore" id="fjo-Zg-al3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wY4-aL-AZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4076" y="447"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="e1J-ao-fxL">
+            <objects>
+                <tabBarController id="FPX-uC-SPw" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Jj-EA-xjg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ULI-iK-B8p" kind="relationship" relationship="viewControllers" id="t0p-Tk-sqI"/>
+                        <segue destination="Q0r-63-9CP" kind="relationship" relationship="viewControllers" id="8hB-v1-8ho"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgw-vD-xo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3156" y="776"/>
         </scene>
         <!--Login-->
         <scene sceneID="Ukd-to-JOZ">
@@ -223,9 +277,10 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-Wp-5ab">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-Wp-5ab">
                                 <rect key="frame" x="57" y="304" width="300" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="emailTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="14z-ig-z0R"/>
                                     <constraint firstAttribute="height" constant="60" id="sD6-jX-t4o"/>
@@ -248,16 +303,16 @@
                                     <action selector="loginPressed:" destination="v5l-ay-S33" eventType="touchUpInside" id="bux-1h-L1R"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sX8-mr-1Vf">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="passwordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sX8-mr-1Vf">
                                 <rect key="frame" x="57" y="374" width="300" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Tey-c3-Uu1"/>
                                     <constraint firstAttribute="width" constant="300" id="UHD-mg-vuh"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.0" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -282,6 +337,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="AlI-Wp-5ab" id="zCC-oP-fQb"/>
                         <outlet property="passwordTextField" destination="sX8-mr-1Vf" id="day-JA-FgB"/>
+                        <segue destination="FPX-uC-SPw" kind="show" identifier="loginToTabBar" id="CI9-b8-zTV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wa-jx-R2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,4 +366,7 @@
     <resources>
         <image name="cityHall-purp.png" width="736" height="1111"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wUI-HN-8bT"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: LPViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -25,10 +25,23 @@ class LoginViewController: UIViewController {
             NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
         passwordTextField.attributedPlaceholder =
             NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
 
+
     @IBAction func loginPressed(_ sender: Any) {
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
+            if error != nil {
+                print(error)
+            } else {
+                print("login Successful")
+                self.performSegue(withIdentifier: "loginToTabBar", sender: self)
+            }
+        }
+        
     }
     /*
     // MARK: - Navigation
@@ -40,13 +53,6 @@ class LoginViewController: UIViewController {
     }
     */
     
-    func uiColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
+
 
 }
