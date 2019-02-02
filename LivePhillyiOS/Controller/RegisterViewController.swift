@@ -9,11 +9,20 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xAD00FD)
+        
+        emailTextField.attributedPlaceholder =
+            NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
+        passwordTextField.attributedPlaceholder =
+            NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
     }
     
 
@@ -26,5 +35,14 @@ class RegisterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func uiColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 
 }
