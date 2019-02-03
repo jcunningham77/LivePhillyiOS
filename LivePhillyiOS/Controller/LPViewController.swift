@@ -33,23 +33,23 @@ class LPViewController: UIViewController, UITextFieldDelegate {
     
     
     //TODO why does the below method invocation cause a crash?
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if textField.restorationIdentifier == "emailTextField" {
-//            if textField.text == nil || textField.text == "" {
-//                textField.attributedPlaceholder =
-//                    NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
-//            }
-//            
-//        }
-//        
-//        if textField.restorationIdentifier == "passwordTextField" {
-//            if textField.text == nil || textField.text == "" {
-//                textField.attributedPlaceholder =
-//                    NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
-//            }
-//            
-//        }
-//    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.restorationIdentifier == "emailTextField" {
+            if textField.text == nil || textField.text == "" {
+                textField.attributedPlaceholder =
+                    NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
+            }
+            
+        }
+        
+        if textField.restorationIdentifier == "passwordTextField" {
+            if textField.text == nil || textField.text == "" {
+                textField.attributedPlaceholder =
+                    NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
+            }
+            
+        }
+    }
     
     
     
