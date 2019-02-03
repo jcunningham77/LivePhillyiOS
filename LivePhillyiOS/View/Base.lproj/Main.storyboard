@@ -220,17 +220,42 @@
         <scene sceneID="E9p-Ul-gJR">
             <objects>
                 <viewController id="ULI-iK-B8p" customClass="ExploreViewController" customModule="LivePhillyiOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ndo-wD-aHs" customClass="UITableView">
+                    <view key="view" contentMode="scaleToFill" id="WjX-5h-ung">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Fi-SD-hPp">
+                                <rect key="frame" x="0.0" y="129" width="414" height="558"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fab-XY-fKz">
+                                <rect key="frame" x="5" y="69" width="97" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleColor" red="0.67843137249999996" green="0.0" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="e6x-UN-f9z"/>
+                        <constraints>
+                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" id="7v0-3L-8pK"/>
+                            <constraint firstItem="Fab-XY-fKz" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" constant="5" id="DTs-h9-9ZX"/>
+                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="top" secondItem="KZf-7p-x5M" secondAttribute="top" constant="65" id="E0Z-cU-D3n"/>
+                            <constraint firstItem="KZf-7p-x5M" firstAttribute="trailing" secondItem="1Fi-SD-hPp" secondAttribute="trailing" id="Qo9-1U-Rlc"/>
+                            <constraint firstItem="Fab-XY-fKz" firstAttribute="top" secondItem="KZf-7p-x5M" secondAttribute="top" constant="5" id="Xqj-6F-pcG"/>
+                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="top" secondItem="Fab-XY-fKz" secondAttribute="bottom" constant="5" id="ql0-7G-N2r"/>
+                            <constraint firstItem="KZf-7p-x5M" firstAttribute="bottom" secondItem="1Fi-SD-hPp" secondAttribute="bottom" id="xxX-SY-bzh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KZf-7p-x5M"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" id="fjo-Zg-al3"/>
+                    <connections>
+                        <outlet property="exploreTableView" destination="1Fi-SD-hPp" id="uQ5-Bk-QuK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wY4-aL-AZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4076" y="447"/>
+            <point key="canvasLocation" x="4075.36231884058" y="446.73913043478262"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e1J-ao-fxL">

@@ -11,23 +11,55 @@ import Alamofire
 import SwiftyJSON
 
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
+    
+    
+    var venues: [Venue]!
+    
     let url = "https://api.yelp.com/v3/businesses/search?location=philadelphia&categories=bubbletea"
     
     let headers: HTTPHeaders = [
         "Authorization": "Bearer WhfBmynX0CW4OUEgzAFQHr7x5jG95kMe_RyRtkpb2D1KKsJ78ZObcrXYUbwp74CaJEHJY-LYlD_PGKXcR1c-073EiX7N9a9NsgqgBkP_GbguQQ2zHFKXuwY7nR06XHYx"
     ]
-
+    
+    
+    @IBOutlet weak var exploreTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
         
+        
+        
+        exploreTableView.delegate = self
+        exploreTableView.dataSource = self
+        exploreTableView.register(UINib(nibName: "ExploreTableView", bundle:nil), forCellReuseIdentifier: "exploreTableView")
+        
+        configureTableView()
+        
         Alamofire.request(url, method:.get, headers:headers).responseJSON {
             response in
             if response.result.isSuccess {
+                self.venues = [Venue]()
                 
-                let results : JSON = JSON(response.result.value!)
-                print("success, results data: \(results)")
+                let json : JSON = JSON(response.result.value!)
+                print("success, results data: \(json)")
+                print("looping through businesses in yelp response" )
+                for (_, subJson) in json["businesses"] {
+                    let venue = Venue ()
+                    if let name = subJson["name"].string {
+                        venue.name = name
+                    }
+                    if let address = subJson["address"].string {
+                        venue.address = address
+                    }
+                    if let image_url = subJson["image_url"].string {
+                        venue.imageUrl = image_url
+                    }
+                    self.venues.append(venue)
+                    
+                }
                 
             } else {
                 print("error: \(response.result.error)" )
@@ -35,25 +67,40 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if let venues = venues {
+            print("numberOfRowsInSection = returning zero\(venues.count)")
+            return venues.count
+        } else {
+            print("numberOfRowsInSection = returning 0")
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier:"customMessageCell", for: indexPath) 
-            
-            return cell
+        print("cellForRowAt")
+        let cell = tableView.dequeueReusableCell(withIdentifier:"exploreTableViewCell", for: indexPath) as! ExploreTableViewCell
+        cell.nameLabel.text = venues[indexPath.row].name
+        cell.addressLabel.text = venues[indexPath.row].name
+        //            cell.venueImage = venues[indexPath.row].name
+        return cell
     }
-
-  
-
+    
+    func configureTableView(){
+        exploreTableView.rowHeight = UITableView.automaticDimension
+        exploreTableView.estimatedRowHeight = 70
+    }
+    
+    
+    
 }
