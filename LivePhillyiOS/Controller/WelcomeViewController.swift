@@ -20,6 +20,16 @@ class WelcomeViewController: UIViewController {
         loginButton.layer.cornerRadius = 20
         registerButton.layer.cornerRadius = 20
         
+        let defaults = UserDefaults.standard
+        let auth = defaults.bool(forKey: DefaultsKeys.authKey)
+        
+        if auth == true {
+            print("WelcomeViewController: the user is already logged in")
+             self.performSegue(withIdentifier: "welcomeToTabBar", sender: self)
+        } else {
+            print("WelcomeViewController: the user not logged in")
+        }
+        
 //        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
 //        let blurEffectView = UIVisualEffectView(effect: blurEffect)
 //        blurEffectView.frame = view.bounds

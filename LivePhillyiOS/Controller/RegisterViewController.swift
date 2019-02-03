@@ -36,8 +36,10 @@ class RegisterViewController: LPViewController {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print(error)
-            } else {
-                print("Registration Successful")
+            } else {        
+                print("Registration Successful, setting flag")
+                let defaults = UserDefaults.standard
+                defaults.set(true, forKey: DefaultsKeys.authKey)
                 self.performSegue(withIdentifier: "registerToTabBar", sender: self)
             }
         }

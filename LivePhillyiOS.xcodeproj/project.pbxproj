@@ -18,7 +18,8 @@
 		167CE321220135B900E1B470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167CE320220135B900E1B470 /* GoogleService-Info.plist */; };
 		167CE3232205063E00E1B470 /* cityHall-purp.png in Resources */ = {isa = PBXBuildFile; fileRef = 167CE3222205063D00E1B470 /* cityHall-purp.png */; };
 		167CE3252206061E00E1B470 /* LPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3242206061E00E1B470 /* LPViewController.swift */; };
-		167CE32722060E9100E1B470 /* ExploreTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE32622060E9100E1B470 /* ExploreTVController.swift */; };
+		167CE329220638F700E1B470 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE328220638F700E1B470 /* ExploreViewController.swift */; };
+		167CE32B220640B900E1B470 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE32A220640B900E1B470 /* DefaultKeys.swift */; };
 		91C351218103518F883F4EB1 /* Pods_LivePhillyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E28F08C3E534A13B5C148 /* Pods_LivePhillyiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +38,8 @@
 		167CE320220135B900E1B470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		167CE3222205063D00E1B470 /* cityHall-purp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cityHall-purp.png"; sourceTree = "<group>"; };
 		167CE3242206061E00E1B470 /* LPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPViewController.swift; sourceTree = "<group>"; };
-		167CE32622060E9100E1B470 /* ExploreTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTVController.swift; sourceTree = "<group>"; };
+		167CE328220638F700E1B470 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		167CE32A220640B900E1B470 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		7EC406BC20996F46DE9F3CB5 /* Pods-LivePhillyiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhillyiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS.release.xcconfig"; sourceTree = "<group>"; };
 		812C678D352E863832B3EFF5 /* Pods-LivePhillyiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhillyiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				167CE3222205063D00E1B470 /* cityHall-purp.png */,
 				167CE30F2201292D00E1B470 /* LaunchScreen.storyboard */,
 				167CE3122201292D00E1B470 /* Info.plist */,
+				167CE32A220640B900E1B470 /* DefaultKeys.swift */,
 			);
 			path = LivePhillyiOS;
 			sourceTree = "<group>";
@@ -103,7 +106,7 @@
 				167CE31C2201324100E1B470 /* LoginViewController.swift */,
 				167CE31E2201328000E1B470 /* RegisterViewController.swift */,
 				167CE3242206061E00E1B470 /* LPViewController.swift */,
-				167CE32622060E9100E1B470 /* ExploreTVController.swift */,
+				167CE328220638F700E1B470 /* ExploreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,18 +230,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,9 +264,10 @@
 				167CE31F2201328000E1B470 /* RegisterViewController.swift in Sources */,
 				167CE3252206061E00E1B470 /* LPViewController.swift in Sources */,
 				167CE31B2201320900E1B470 /* WelcomeViewController.swift in Sources */,
+				167CE329220638F700E1B470 /* ExploreViewController.swift in Sources */,
+				167CE32B220640B900E1B470 /* DefaultKeys.swift in Sources */,
 				167CE3092201292B00E1B470 /* ViewController.swift in Sources */,
 				167CE3072201292B00E1B470 /* AppDelegate.swift in Sources */,
-				167CE32722060E9100E1B470 /* ExploreTVController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,9 +35,11 @@ class LoginViewController: LPViewController {
     @IBAction func loginPressed(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
             if error != nil {
-                print(error)
+                print(error ?? "error")
             } else {
-                print("login Successful")
+                print("login Successful, setting flag")
+                let defaults = UserDefaults.standard
+                defaults.set(true, forKey: DefaultsKeys.authKey)
                 self.performSegue(withIdentifier: "loginToTabBar", sender: self)
             }
         }
