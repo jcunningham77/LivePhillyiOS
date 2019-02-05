@@ -34,7 +34,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         exploreTableView.delegate = self
         exploreTableView.dataSource = self
-        exploreTableView.register(UINib(nibName: "ExploreTableView", bundle:nil), forCellReuseIdentifier: "exploreTableView")
+        exploreTableView.register(UINib(nibName: "ExploreTableViewCell", bundle:nil), forCellReuseIdentifier: "exploreTableViewCell")
         
         configureTableView()
         
@@ -60,6 +60,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.venues.append(venue)
                     
                 }
+                
+                self.exploreTableView.reloadData()
                 
             } else {
                 print("error: \(response.result.error)" )

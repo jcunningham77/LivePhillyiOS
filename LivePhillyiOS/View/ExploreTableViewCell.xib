@@ -19,9 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nZ-zE-4R6">
-                        <rect key="frame" x="0.0" y="0.0" width="90" height="69.5"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFV-UX-hyP">
                         <rect key="frame" x="98" y="11" width="97" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -34,23 +31,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-bu-Wrf">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="3nZ-zE-4R6" secondAttribute="bottom" id="3yY-YR-ozj"/>
                     <constraint firstItem="A3f-qc-H3B" firstAttribute="top" secondItem="LFV-UX-hyP" secondAttribute="bottom" constant="6" id="F5r-Fy-drX"/>
-                    <constraint firstItem="LFV-UX-hyP" firstAttribute="leading" secondItem="3nZ-zE-4R6" secondAttribute="trailing" constant="8" id="bvU-YR-WgP"/>
                     <constraint firstAttribute="bottomMargin" secondItem="A3f-qc-H3B" secondAttribute="bottom" constant="9" id="mK1-bD-CI5"/>
                     <constraint firstItem="LFV-UX-hyP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="qmZ-NL-MLv"/>
-                    <constraint firstItem="3nZ-zE-4R6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uK4-Qj-jmm"/>
-                    <constraint firstItem="3nZ-zE-4R6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wTw-6g-bZ7"/>
-                    <constraint firstItem="A3f-qc-H3B" firstAttribute="leading" secondItem="3nZ-zE-4R6" secondAttribute="trailing" constant="8" id="zvh-jn-mYD"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLabel" destination="A3f-qc-H3B" id="iyd-cb-nEQ"/>
-                <outlet property="image" destination="3nZ-zE-4R6" id="sFH-mD-yY7"/>
                 <outlet property="nameLabel" destination="LFV-UX-hyP" id="Cyz-Jq-j0b"/>
+                <outlet property="venueImage" destination="fh0-bu-Wrf" id="TnD-2A-h9c"/>
             </connections>
             <point key="canvasLocation" x="113.59999999999999" y="60.26986506746627"/>
         </tableViewCell>

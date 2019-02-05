@@ -10,7 +10,9 @@ import UIKit
 
 class ExploreTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var venueImage: UIImageView!
+
+
+    @IBOutlet var venueImage: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -19,10 +21,6 @@ class ExploreTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
     
 }
