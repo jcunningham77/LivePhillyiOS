@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet var titleView: UINavigationItem!
     
     
     var venues: [Venue]!
@@ -22,20 +23,21 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         "Authorization": "Bearer WhfBmynX0CW4OUEgzAFQHr7x5jG95kMe_RyRtkpb2D1KKsJ78ZObcrXYUbwp74CaJEHJY-LYlD_PGKXcR1c-073EiX7N9a9NsgqgBkP_GbguQQ2zHFKXuwY7nR06XHYx"
     ]
     
+    @IBAction func logoutPressed(_ sender: Any) {
+        print("pressedLogout")
+    }
+    
     
     @IBOutlet weak var exploreTableView: UITableView!
     
-    @objc func logout(){
+    @objc func logoutFunc(){
         print("logout")
     }
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action:#selector(self.logout))
-        
 
-        
         
         
         exploreTableView.delegate = self

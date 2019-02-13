@@ -261,11 +261,20 @@
                     <tabBarItem key="tabBarItem" title="Explore" id="fjo-Zg-al3"/>
                     <connections>
                         <outlet property="exploreTableView" destination="1Fi-SD-hPp" id="uQ5-Bk-QuK"/>
+                        <outlet property="logout" destination="IHh-4N-clf" id="NUO-o1-e1Q"/>
+                        <outlet property="titleView" destination="2eI-Pw-eLZ" id="kWf-Jn-dDx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wY4-aL-AZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Title" id="2eI-Pw-eLZ">
-                    <barButtonItem key="rightBarButtonItem" title="Item" id="IHh-4N-clf" userLabel="Logout"/>
+                    <barButtonItem key="rightBarButtonItem" title="Item" id="IHh-4N-clf" userLabel="Logout">
+                        <connections>
+                            <action selector="logoutPressed:" destination="ULI-iK-B8p" id="O6T-Aq-fbv"/>
+                        </connections>
+                    </barButtonItem>
+                    <connections>
+                        <outlet property="titleView" destination="WjX-5h-ung" id="R8F-Xl-3Ni"/>
+                    </connections>
                 </navigationItem>
             </objects>
             <point key="canvasLocation" x="4075.36231884058" y="446.73913043478262"/>
