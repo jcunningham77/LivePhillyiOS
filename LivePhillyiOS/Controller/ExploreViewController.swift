@@ -25,10 +25,16 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var exploreTableView: UITableView!
     
-    
+    @objc func logout(){
+        print("logout")
+    }
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action:#selector(self.logout))
+        
+
         
         
         
@@ -68,6 +74,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
             }
         }
+        
+
         
         
         // Uncomment the following line to preserve selection between presentations

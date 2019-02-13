@@ -264,6 +264,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wY4-aL-AZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Title" id="2eI-Pw-eLZ">
+                    <barButtonItem key="rightBarButtonItem" title="Item" id="IHh-4N-clf" userLabel="Logout"/>
+                </navigationItem>
             </objects>
             <point key="canvasLocation" x="4075.36231884058" y="446.73913043478262"/>
         </scene>
