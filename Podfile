@@ -12,5 +12,6 @@ target 'LivePhillyiOS' do
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'Kingfisher', '~> 5.0'
 
 end

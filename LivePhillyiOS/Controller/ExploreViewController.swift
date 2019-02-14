@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -46,25 +47,24 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let json : JSON = JSON(response.result.value!)
                 print("success, results data: \(json)")
                 print("looping through businesses in yelp response" )
+                
                 for (_, subJson) in json["businesses"] {
-                    let venue = Venue ()
-                    if let name = subJson["name"].string {
-                        venue.name = name
+                    let decoder = JSONDecoder()
+                    //                    do {
+                    let data = try? subJson.rawData()
+                    
+                    let venue = try? decoder.decode(Venue.self, from: data!)
+                    
+                    if let venueToAppend = venue {
+                        self.venues.append(venueToAppend)
                     }
-                    if let address = subJson["address"].string {
-                        venue.address = address
-                    }
-                    if let image_url = subJson["image_url"].string {
-                        venue.imageUrl = image_url
-                    }
-                    self.venues.append(venue)
                     
                 }
                 
                 self.exploreTableView.reloadData()
                 
             } else {
-                print("error: \(response.result.error)" )
+                print("error: \(String(describing: response.result.error ))" )
                 
             }
         }
@@ -93,8 +93,13 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         print("cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier:"exploreTableViewCell", for: indexPath) as! ExploreTableViewCell
         cell.nameLabel.text = venues[indexPath.row].name
-        cell.addressLabel.text = venues[indexPath.row].name
-        //            cell.venueImage = venues[indexPath.row].name
+        var displayAddressText = venues[indexPath.row].location.displayAddress[0] + ", "; venues[indexPath.row].location.displayAddress[1]
+        
+        
+        cell.addressLabel.text = displayAddressText
+        let url = URL(string: venues[indexPath.row].imageURL)
+        cell.venueImage.kf.setImage(with: url)
+        
         return cell
     }
     
