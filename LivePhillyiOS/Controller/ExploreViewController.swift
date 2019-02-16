@@ -93,11 +93,15 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         print("cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier:"exploreTableViewCell", for: indexPath) as! ExploreTableViewCell
         cell.nameLabel.text = venues[indexPath.row].name
-        var displayAddressText = venues[indexPath.row].location.displayAddress[0] + ", "; venues[indexPath.row].location.displayAddress[1]
+        let displayAddressText = venues[indexPath.row].location.displayAddress[0] + ", " + venues[indexPath.row].location.displayAddress[1];
         
         
         cell.addressLabel.text = displayAddressText
-        let url = URL(string: venues[indexPath.row].imageURL)
+        
+        // TODO add error handling for string URL
+        let urlString = venues[indexPath.row].imageURL.replacingOccurrences(of: "o.jpg", with: "120s.jpg")
+        print("string url = " + urlString)
+        let url = URL(string: urlString)
         cell.venueImage.kf.setImage(with: url)
         
         return cell
