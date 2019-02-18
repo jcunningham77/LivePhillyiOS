@@ -19,7 +19,7 @@ class LoginViewController: LPViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xAD00FD)
+        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xFF0000)
         
         emailTextField.attributedPlaceholder =
             NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])

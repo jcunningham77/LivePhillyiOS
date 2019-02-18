@@ -15,23 +15,23 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exploreTableViewCell" rowHeight="120" id="KGk-i7-Jjw" customClass="ExploreTableViewCell" customModule="LivePhillyiOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFV-UX-hyP">
-                        <rect key="frame" x="131" y="11.5" width="64" height="21"/>
+                        <rect key="frame" x="131" y="21.5" width="64" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3f-qc-H3B">
-                        <rect key="frame" x="131" y="35.5" width="68.5" height="12"/>
+                        <rect key="frame" x="131" y="45.5" width="68.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-bu-Wrf">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-bu-Wrf">
                         <rect key="frame" x="3" y="3" width="120" height="120.5"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="1Pw-ok-hMP"/>
@@ -49,10 +49,8 @@
                     <constraint firstAttribute="bottom" secondItem="fh0-bu-Wrf" secondAttribute="bottom" constant="3" id="UUh-nk-rmm"/>
                     <constraint firstItem="A3f-qc-H3B" firstAttribute="leading" secondItem="fh0-bu-Wrf" secondAttribute="trailing" constant="8" id="ZSH-nX-RzU"/>
                     <constraint firstItem="LFV-UX-hyP" firstAttribute="leading" secondItem="fh0-bu-Wrf" secondAttribute="trailing" constant="8" id="cDs-j3-OEx"/>
-                    <constraint firstItem="A3f-qc-H3B" firstAttribute="top" secondItem="LFV-UX-hyP" secondAttribute="bottom" constant="3" id="ecF-8w-XdV"/>
                     <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="A3f-qc-H3B" secondAttribute="trailing" constant="136" id="kHS-wa-H6M"/>
                     <constraint firstItem="LFV-UX-hyP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="p6x-rq-FYn"/>
-                    <constraint firstItem="LFV-UX-hyP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="qmZ-NL-MLv"/>
                     <constraint firstItem="fh0-bu-Wrf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="xPT-Nl-PQD"/>
                 </constraints>
             </tableViewCellContentView>

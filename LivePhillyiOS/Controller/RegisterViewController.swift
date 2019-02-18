@@ -18,7 +18,7 @@ class RegisterViewController: LPViewController {
 
         // Do any additional setup after loading the view.
         
-        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xAD00FD)
+        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xFF0000)
         
         emailTextField.attributedPlaceholder =
             NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
@@ -35,7 +35,7 @@ class RegisterViewController: LPViewController {
         //TODO: Set up a new user on our Firebase database
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
-                print(error)
+                print(error as Any)
             } else {        
                 print("Registration Successful, setting flag")
                 let defaults = UserDefaults.standard

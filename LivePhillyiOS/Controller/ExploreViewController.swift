@@ -111,7 +111,4 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         exploreTableView.rowHeight = UITableView.automaticDimension
         exploreTableView.estimatedRowHeight = 70
     }
-    
-    
-    
 }

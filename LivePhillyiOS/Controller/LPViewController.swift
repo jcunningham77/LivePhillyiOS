@@ -15,7 +15,7 @@ class LPViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let purpColor = uiColorFromRGB(rgbValue: 0xAD00FD)
+        
         
 //        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xAD00FD)
         
