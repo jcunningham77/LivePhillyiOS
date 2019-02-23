@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 16477A2022218BCF00CB1087 /* parkwayLogoDark.png */; };
 		167CE3072201292B00E1B470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3062201292B00E1B470 /* AppDelegate.swift */; };
 		167CE3092201292B00E1B470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3082201292B00E1B470 /* ViewController.swift */; };
 		167CE30C2201292B00E1B470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167CE30A2201292B00E1B470 /* Main.storyboard */; };
@@ -16,15 +17,12 @@
 		167CE31D2201324100E1B470 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE31C2201324100E1B470 /* LoginViewController.swift */; };
 		167CE31F2201328000E1B470 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE31E2201328000E1B470 /* RegisterViewController.swift */; };
 		167CE321220135B900E1B470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167CE320220135B900E1B470 /* GoogleService-Info.plist */; };
-		167CE3232205063E00E1B470 /* cityHall-purp.png in Resources */ = {isa = PBXBuildFile; fileRef = 167CE3222205063D00E1B470 /* cityHall-purp.png */; };
-		167CE3252206061E00E1B470 /* LPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3242206061E00E1B470 /* LPViewController.swift */; };
 		167CE329220638F700E1B470 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE328220638F700E1B470 /* ExploreViewController.swift */; };
 		167CE32B220640B900E1B470 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE32A220640B900E1B470 /* DefaultKeys.swift */; };
 		167CE32E22076B6600E1B470 /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE32C22076B6600E1B470 /* ExploreTableViewCell.swift */; };
 		167CE32F22076B6600E1B470 /* ExploreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167CE32D22076B6600E1B470 /* ExploreTableViewCell.xib */; };
 		167CE33222077D7B00E1B470 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE33122077D7B00E1B470 /* Venue.swift */; };
 		16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */; };
-		16AFBB482218597600FE9CD0 /* phillyParkwayLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB472218597600FE9CD0 /* phillyParkwayLogo.png */; };
 		16AFBB4A221B06AA00FE9CD0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB49221B06AA00FE9CD0 /* EventViewController.swift */; };
 		16AFBB4D221B0B0200FE9CD0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */; };
 		16AFBB4E221B0B0200FE9CD0 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB4C221B0B0200FE9CD0 /* EventTableViewCell.xib */; };
@@ -35,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		107E28F08C3E534A13B5C148 /* Pods_LivePhillyiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhillyiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16477A2022218BCF00CB1087 /* parkwayLogoDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkwayLogoDark.png; sourceTree = "<group>"; };
 		167CE3032201292B00E1B470 /* LivePhillyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhillyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167CE3062201292B00E1B470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167CE3082201292B00E1B470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,15 +45,12 @@
 		167CE31C2201324100E1B470 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		167CE31E2201328000E1B470 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		167CE320220135B900E1B470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		167CE3222205063D00E1B470 /* cityHall-purp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cityHall-purp.png"; sourceTree = "<group>"; };
-		167CE3242206061E00E1B470 /* LPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPViewController.swift; sourceTree = "<group>"; };
 		167CE328220638F700E1B470 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		167CE32A220640B900E1B470 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		167CE32C22076B6600E1B470 /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
 		167CE32D22076B6600E1B470 /* ExploreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreTableViewCell.xib; sourceTree = "<group>"; };
 		167CE33122077D7B00E1B470 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = livePhillyLogo.png; sourceTree = "<group>"; };
-		16AFBB472218597600FE9CD0 /* phillyParkwayLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phillyParkwayLogo.png; sourceTree = "<group>"; };
 		16AFBB49221B06AA00FE9CD0 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		16AFBB4C221B0B0200FE9CD0 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
@@ -104,9 +100,8 @@
 				167CE3082201292B00E1B470 /* ViewController.swift */,
 				167CE320220135B900E1B470 /* GoogleService-Info.plist */,
 				167CE30D2201292D00E1B470 /* Assets.xcassets */,
+				16477A2022218BCF00CB1087 /* parkwayLogoDark.png */,
 				16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */,
-				16AFBB472218597600FE9CD0 /* phillyParkwayLogo.png */,
-				167CE3222205063D00E1B470 /* cityHall-purp.png */,
 				167CE30F2201292D00E1B470 /* LaunchScreen.storyboard */,
 				167CE3122201292D00E1B470 /* Info.plist */,
 				167CE32A220640B900E1B470 /* DefaultKeys.swift */,
@@ -132,7 +127,6 @@
 				167CE31A2201320900E1B470 /* WelcomeViewController.swift */,
 				167CE31C2201324100E1B470 /* LoginViewController.swift */,
 				167CE31E2201328000E1B470 /* RegisterViewController.swift */,
-				167CE3242206061E00E1B470 /* LPViewController.swift */,
 				167CE328220638F700E1B470 /* ExploreViewController.swift */,
 				16AFBB49221B06AA00FE9CD0 /* EventViewController.swift */,
 			);
@@ -228,13 +222,12 @@
 			files = (
 				16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */,
 				167CE3112201292D00E1B470 /* LaunchScreen.storyboard in Resources */,
-				16AFBB482218597600FE9CD0 /* phillyParkwayLogo.png in Resources */,
 				167CE321220135B900E1B470 /* GoogleService-Info.plist in Resources */,
 				16AFBB52221B498700FE9CD0 /* eventDataGenerated.json in Resources */,
 				167CE30E2201292D00E1B470 /* Assets.xcassets in Resources */,
 				167CE32F22076B6600E1B470 /* ExploreTableViewCell.xib in Resources */,
 				16AFBB4E221B0B0200FE9CD0 /* EventTableViewCell.xib in Resources */,
-				167CE3232205063E00E1B470 /* cityHall-purp.png in Resources */,
+				16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */,
 				167CE30C2201292B00E1B470 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +271,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -290,6 +284,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -310,7 +305,6 @@
 				16AFBB4A221B06AA00FE9CD0 /* EventViewController.swift in Sources */,
 				167CE33222077D7B00E1B470 /* Venue.swift in Sources */,
 				167CE31F2201328000E1B470 /* RegisterViewController.swift in Sources */,
-				167CE3252206061E00E1B470 /* LPViewController.swift in Sources */,
 				167CE32E22076B6600E1B470 /* ExploreTableViewCell.swift in Sources */,
 				167CE31B2201320900E1B470 /* WelcomeViewController.swift in Sources */,
 				167CE329220638F700E1B470 /* ExploreViewController.swift in Sources */,

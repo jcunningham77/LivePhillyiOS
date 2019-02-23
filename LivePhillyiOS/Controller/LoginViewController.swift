@@ -8,23 +8,26 @@
 
 import UIKit
 import Firebase
+import SkyFloatingLabelTextField
 
-class LoginViewController: LPViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     
+    @IBOutlet var registerButton: UIButton!
     
+    @IBOutlet var loginErrorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xFF0000)
+    
         
-        emailTextField.attributedPlaceholder =
-            NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
-        passwordTextField.attributedPlaceholder =
-            NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
+        
+        loginErrorLabel.isHidden = true
+        emailTextField.placeholder = "Email Address"
+        emailTextField.title = "Email Address"
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -36,6 +39,15 @@ class LoginViewController: LPViewController {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
             if error != nil {
                 print(error ?? "error")
+                self.loginErrorLabel.isHidden = false
+                
+                
+                self.emailTextField.text = ""
+                
+                self.passwordTextField.text = ""
+                
+                self.emailTextField.becomeFirstResponder()
+                
             } else {
                 print("login Successful, setting flag")
                 let defaults = UserDefaults.standard

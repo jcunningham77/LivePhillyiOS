@@ -47,7 +47,7 @@ class WelcomeViewController: UIViewController {
             print("WelcomeViewController: the user is already logged in")
             self.performSegue(withIdentifier: "welcomeToTabBar", sender: self)
         } else {
-            self.performSegue(withIdentifier: "welcomeToRegister", sender: self)
+            self.performSegue(withIdentifier: "welcomeToLogin", sender: self)
         }
     }
 }

@@ -8,23 +8,14 @@
 
 import UIKit
 import Firebase
+import SkyFloatingLabelTextField
 
-class RegisterViewController: LPViewController {
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+class RegisterViewController: UIViewController, UITextFieldDelegate{
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        let purpColor: UIColor = uiColorFromRGB(rgbValue: 0xFF0000)
-        
-        emailTextField.attributedPlaceholder =
-            NSAttributedString(string: "Email",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
-        passwordTextField.attributedPlaceholder =
-            NSAttributedString(string: "Password",attributes: [NSAttributedString.Key.foregroundColor: purpColor])
-        
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -45,18 +36,4 @@ class RegisterViewController: LPViewController {
         }
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-
-
 }
