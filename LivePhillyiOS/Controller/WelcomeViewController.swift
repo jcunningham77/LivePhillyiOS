@@ -10,45 +10,44 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet var logoImage: UIImageView!
     
-    @IBOutlet weak var loginButton: UIButton!
-    
-    @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.layer.cornerRadius = 20
-        registerButton.layer.cornerRadius = 20
-        
-        let defaults = UserDefaults.standard
-        let auth = defaults.bool(forKey: DefaultsKeys.authKey)
-        
-        if auth == true {
-            print("WelcomeViewController: the user is already logged in")
-             self.performSegue(withIdentifier: "welcomeToTabBar", sender: self)
-        } else {
-            print("WelcomeViewController: the user not logged in")
-        }
-        
-//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = view.bounds
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        backgroundImageView?.addSubview(blurEffectView)
-        
-
-        // Do any additional setup after loading the view.
+        logoImage.alpha = 0.0
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let xPosition = self.logoImage.frame.origin.x
+        var yPosition = screenSize.height * 0.7
+        let height = self.logoImage.frame.size.height
+        let width = self.logoImage.frame.size.width
+        self.logoImage.frame = CGRect(x: xPosition, y: yPosition, width:width, height: height)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        yPosition = screenSize.height * 0.3
+        
+        
+        UIView.animate(withDuration: 1.2, delay: 0.1, options: [.curveEaseOut], animations: {
+            self.logoImage.alpha = 1.0
+            self.logoImage.frame = CGRect(x: xPosition, y: yPosition, width:width, height: height)
+        }, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+            self.navigate()
+        })
     }
-    */
-
+    
+    func navigate() {
+        let defaults = UserDefaults.standard
+        let auth = defaults.bool(forKey: DefaultsKeys.authKey)
+        if auth == true {
+            print("WelcomeViewController: the user is already logged in")
+            self.performSegue(withIdentifier: "welcomeToTabBar", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "welcomeToRegister", sender: self)
+        }
+    }
 }
