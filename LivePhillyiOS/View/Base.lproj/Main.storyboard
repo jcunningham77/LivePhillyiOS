@@ -116,7 +116,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPS-fD-3ml">
-                                <rect key="frame" x="30" y="540" width="354" height="48"/>
+                                <rect key="frame" x="30" y="510" width="354" height="48"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="0.603515625" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <state key="normal" title="Register">
@@ -124,6 +124,17 @@
                                 </state>
                                 <connections>
                                     <action selector="register:" destination="NGE-XM-nV1" eventType="touchUpInside" id="UUl-86-6my"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfR-NL-wC3">
+                                <rect key="frame" x="100.66666666666669" y="578" width="213" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <state key="normal" title="Already have an account?">
+                                    <color key="titleColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="register:" destination="NGE-XM-nV1" eventType="touchUpInside" id="K83-9d-tyG"/>
+                                    <segue destination="v5l-ay-S33" kind="show" id="i81-mI-Bie"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nv-Gz-yud" userLabel="logoView">
@@ -143,26 +154,25 @@
                                     <constraint firstItem="c6d-0F-SW4" firstAttribute="top" secondItem="9nv-Gz-yud" secondAttribute="top" id="xFY-b8-59f"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfR-NL-wC3">
-                                <rect key="frame" x="100.66666666666669" y="608" width="213" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
-                                <state key="normal" title="Already have an account?">
-                                    <color key="titleColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="register:" destination="NGE-XM-nV1" eventType="touchUpInside" id="K83-9d-tyG"/>
-                                    <segue destination="v5l-ay-S33" kind="show" id="i81-mI-Bie"/>
-                                </connections>
-                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sorry, we don't have an account on record for that email address / password combination. Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-pS-Elv">
+                                <rect key="frame" x="20" y="321" width="374" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ltk-pS-Elv" secondAttribute="trailing" constant="20" id="19d-Ho-Z5R"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="6Qs-vs-vHE"/>
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" id="BAw-0Q-XHH"/>
                             <constraint firstItem="9nv-Gz-yud" firstAttribute="top" secondItem="0iY-wA-QUH" secondAttribute="top" constant="45" id="HNb-RN-Pgy"/>
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="top" secondItem="0iY-wA-QUH" secondAttribute="top" id="JBA-8F-Fph"/>
+                            <constraint firstItem="bSB-Vt-4nz" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="Kf5-Sq-OwK"/>
+                            <constraint firstItem="Ltk-pS-Elv" firstAttribute="leading" secondItem="JSU-yA-68t" secondAttribute="leading" constant="20" id="MhA-XB-VpS"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="R9b-aS-Iey"/>
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="bottom" secondItem="0iY-wA-QUH" secondAttribute="bottom" id="SSg-zF-bMy"/>
+                            <constraint firstItem="UFk-U9-P0D" firstAttribute="top" secondItem="Ltk-pS-Elv" secondAttribute="bottom" constant="20" id="Se3-dM-cI9"/>
                             <constraint firstItem="9nv-Gz-yud" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="Wjv-kJ-bXa"/>
                             <constraint firstItem="bSB-Vt-4nz" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="Xrc-7O-Oif"/>
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="top" secondItem="0iY-wA-QUH" secondAttribute="top" id="XsO-Qa-0sh"/>
@@ -171,20 +181,22 @@
                             <constraint firstItem="rfR-NL-wC3" firstAttribute="top" secondItem="dPS-fD-3ml" secondAttribute="bottom" constant="20" id="egD-72-eAC"/>
                             <constraint firstItem="rfR-NL-wC3" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="fG2-NF-bst"/>
                             <constraint firstItem="0iY-wA-QUH" firstAttribute="trailing" secondItem="UFk-U9-P0D" secondAttribute="trailing" constant="30" id="fMF-14-XtR"/>
-                            <constraint firstItem="0iY-wA-QUH" firstAttribute="trailing" secondItem="bSB-Vt-4nz" secondAttribute="trailing" constant="30" id="hbc-DN-ECv"/>
                             <constraint firstItem="dPS-fD-3ml" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="juT-2c-dfh"/>
+                            <constraint firstItem="Ltk-pS-Elv" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="k51-8b-cB6"/>
                             <constraint firstItem="dPS-fD-3ml" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="kOS-DR-cdf"/>
                             <constraint firstItem="bSB-Vt-4nz" firstAttribute="top" secondItem="UFk-U9-P0D" secondAttribute="bottom" constant="10" id="o7w-hs-beM"/>
                             <constraint firstItem="0iY-wA-QUH" firstAttribute="trailing" secondItem="dPS-fD-3ml" secondAttribute="trailing" constant="30" id="pIp-Rb-UpM"/>
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="trailing" secondItem="0iY-wA-QUH" secondAttribute="trailing" id="qI5-c3-5yz"/>
+                            <constraint firstItem="0iY-wA-QUH" firstAttribute="trailing" secondItem="bSB-Vt-4nz" secondAttribute="trailing" constant="30" id="rQa-5a-9KK"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="top" relation="lessThanOrEqual" secondItem="9nv-Gz-yud" secondAttribute="bottom" constant="240" id="sUW-RX-i0a"/>
-                            <constraint firstItem="bSB-Vt-4nz" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="vJQ-Uu-byR"/>
+                            <constraint firstItem="Ltk-pS-Elv" firstAttribute="top" relation="lessThanOrEqual" secondItem="9nv-Gz-yud" secondAttribute="bottom" constant="171" id="zkq-MG-xDD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0iY-wA-QUH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="kcY-Lk-KcY"/>
                     <connections>
                         <outlet property="emailTextField" destination="UFk-U9-P0D" id="Fr6-gO-9pi"/>
+                        <outlet property="errorMessageLabel" destination="Ltk-pS-Elv" id="8fP-tu-5zu"/>
                         <outlet property="passwordTextField" destination="bSB-Vt-4nz" id="UsY-zl-eKv"/>
                         <segue destination="FPX-uC-SPw" kind="show" identifier="registerToTabBar" id="wUI-HN-8bT"/>
                     </connections>
@@ -443,7 +455,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, we don't have an account on record for that email address / password combination. Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-mE-5G2">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, we don't have an account on record for that email address / password combination. Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-mE-5G2">
                                 <rect key="frame" x="20" y="303" width="374" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -495,7 +507,7 @@
                     <navigationItem key="navigationItem" title="Login" id="tV6-yX-pjT"/>
                     <connections>
                         <outlet property="emailTextField" destination="AlI-Wp-5ab" id="zCC-oP-fQb"/>
-                        <outlet property="loginErrorLabel" destination="CoW-mE-5G2" id="T2S-Jk-uia"/>
+                        <outlet property="errorLabel" destination="CoW-mE-5G2" id="bSn-eD-seh"/>
                         <outlet property="passwordTextField" destination="sX8-mr-1Vf" id="day-JA-FgB"/>
                         <outlet property="registerButton" destination="fHd-8v-rmY" id="xh0-ho-1H4"/>
                         <segue destination="FPX-uC-SPw" kind="show" identifier="loginToTabBar" id="CI9-b8-zTV"/>

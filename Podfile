@@ -14,5 +14,7 @@ target 'LivePhillyiOS' do
   pod 'Alamofire'
   pod 'Kingfisher', '~> 5.0'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end

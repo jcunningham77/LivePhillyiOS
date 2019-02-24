@@ -10,14 +10,14 @@ import UIKit
 import Firebase
 import SkyFloatingLabelTextField
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: AuthViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     
+    @IBOutlet var errorLabel: UILabel!
     @IBOutlet var registerButton: UIButton!
     
-    @IBOutlet var loginErrorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
         
         
-        loginErrorLabel.isHidden = true
+        errorLabel.isHidden = true
         emailTextField.placeholder = "Email Address"
         emailTextField.title = "Email Address"
         
@@ -39,14 +39,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
             if error != nil {
                 print(error ?? "error")
-                self.loginErrorLabel.isHidden = false
+                print(error as Any)
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    self.parseAuthErrorCode(errCode, error, self.errorLabel)
+                    
+                    
+                    self.emailTextField.text = ""
+                    
+                    self.passwordTextField.text = ""
+                    
+                    self.emailTextField.becomeFirstResponder()
+                }
                 
-                
-                self.emailTextField.text = ""
-                
-                self.passwordTextField.text = ""
-                
-                self.emailTextField.becomeFirstResponder()
+
                 
             } else {
                 print("login Successful, setting flag")
