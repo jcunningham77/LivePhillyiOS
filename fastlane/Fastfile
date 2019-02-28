@@ -1,0 +1,30 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "2.68.0"
+
+# This value helps us track success metrics for Fastfiles
+# we automatically generate. Feel free to remove this line
+# once you get things running smoothly!
+generated_fastfile_id "601fd6ea-d8f9-4ac6-ab36-c767031b3e38"
+
+default_platform :ios
+
+# Fastfile actions accept additional configuration, but
+# don't worry, fastlane will prompt you for required
+# info which you can add here later
+lane :beta do
+# build your iOS app
+build_app
+upload_to_testflight
+
+
+
+
+
+# upload to Beta by Crashlytics
+#crashlytics(
+#api_token: "4a50f82908491f822b89af419e412c6f77887924",
+#build_secret: "06b0933e9bcc3c8d020caf127fd0053e8bb55143b34caa26187c7fcb828d8cd8"
+#)
+end

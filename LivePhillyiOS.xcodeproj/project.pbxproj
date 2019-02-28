@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 16477A2022218BCF00CB1087 /* parkwayLogoDark.png */; };
 		16477A2522232D3E00CB1087 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16477A2422232D3E00CB1087 /* AuthViewController.swift */; };
+		1675677A2224E8E1006A0448 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 167567762224E8CC006A0448 /* .gitignore */; };
+		1675677B2224E8E1006A0448 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567772224E8CC006A0448 /* Fastfile */; };
+		1675677C2224E8E1006A0448 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567782224E8CC006A0448 /* Appfile */; };
 		167CE3072201292B00E1B470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3062201292B00E1B470 /* AppDelegate.swift */; };
 		167CE3092201292B00E1B470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3082201292B00E1B470 /* ViewController.swift */; };
 		167CE30C2201292B00E1B470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167CE30A2201292B00E1B470 /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 		107E28F08C3E534A13B5C148 /* Pods_LivePhillyiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhillyiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16477A2022218BCF00CB1087 /* parkwayLogoDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkwayLogoDark.png; sourceTree = "<group>"; };
 		16477A2422232D3E00CB1087 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		167567762224E8CC006A0448 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "../../Downloads/fastlane 2/.gitignore"; sourceTree = "<group>"; };
+		167567772224E8CC006A0448 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		167567782224E8CC006A0448 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
 		167CE3032201292B00E1B470 /* LivePhillyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhillyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167CE3062201292B00E1B470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167CE3082201292B00E1B470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1675677E2224EB30006A0448 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				167567782224E8CC006A0448 /* Appfile */,
+				167567772224E8CC006A0448 /* Fastfile */,
+			);
+			path = fastlane;
+			sourceTree = "<group>";
+		};
 		167CE2FA2201292B00E1B470 = {
 			isa = PBXGroup;
 			children = (
+				1675677E2224EB30006A0448 /* fastlane */,
+				167567762224E8CC006A0448 /* .gitignore */,
 				167CE3052201292B00E1B470 /* LivePhillyiOS */,
 				167CE3042201292B00E1B470 /* Products */,
 				C588E932E43D98BC7DFEB0E3 /* Pods */,
@@ -224,6 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1675677C2224E8E1006A0448 /* Appfile in Resources */,
+				1675677A2224E8E1006A0448 /* .gitignore in Resources */,
+				1675677B2224E8E1006A0448 /* Fastfile in Resources */,
 				16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */,
 				167CE3112201292D00E1B470 /* LaunchScreen.storyboard in Resources */,
 				167CE321220135B900E1B470 /* GoogleService-Info.plist in Resources */,
@@ -481,6 +501,7 @@
 			baseConfigurationReference = 812C678D352E863832B3EFF5 /* Pods-LivePhillyiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DQ84DL6A4;
 				INFOPLIST_FILE = LivePhillyiOS/Info.plist;
@@ -491,6 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcunningham.LivePhillyiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -501,6 +523,7 @@
 			baseConfigurationReference = 7EC406BC20996F46DE9F3CB5 /* Pods-LivePhillyiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DQ84DL6A4;
 				INFOPLIST_FILE = LivePhillyiOS/Info.plist;
@@ -511,6 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcunningham.LivePhillyiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -526,7 +550,7 @@
 				167CE3142201292D00E1B470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		167CE3152201292D00E1B470 /* Build configuration list for PBXNativeTarget "LivePhillyiOS" */ = {
 			isa = XCConfigurationList;
@@ -535,7 +559,7 @@
 				167CE3172201292D00E1B470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
