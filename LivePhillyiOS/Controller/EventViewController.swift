@@ -9,10 +9,11 @@
 import UIKit
 import SwiftyJSON
 import Kingfisher
+import Firebase
 
 class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
-    var events: [Event]!
+    var events: [FBEvent]!
     
     @IBOutlet var eventTableView: UITableView!
     
@@ -29,27 +30,38 @@ class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDa
         let url = Bundle.main.url(forResource: "eventDataGenerated", withExtension: "json")!
         
         do {
-            let jsonData = try Data(contentsOf: url)
-            self.events = [Event]()
             
-            let json : JSON = JSON(jsonData)
+
+            let db = Firestore.firestore()
             
-            var i: Int = 0
-            for (_, subJson) in json["events"] {
-                i = i+1
-                let decoder = JSONDecoder()
-                //                    do {
-                let data = try? subJson.rawData()
-                
-                let event = try? decoder.decode(Event.self, from: data!)
-                
-                if let eventToAppend = event {
-                    if (i <= 2){
+            db.collection("events").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print(document)
+                        
+                        document.get("description") as! String
+                        
+                        
+                        let eventToAppend: FBEvent
+                        
+
+//
+                        eventToAppend = FBEvent(fromFB: document)
+                        
+
+                        
                         self.events.append(eventToAppend)
                     }
-                    
                 }
             }
+//            let jsonData = try Data(contentsOf: url)
+            self.events = [FBEvent]()
+            
+            
+            
+            
             
             self.eventTableView.reloadData()
             self.eventTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -90,8 +102,8 @@ class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDa
         
         
         cell.eventTitleLabel.text = events[indexPath.row].title
-        let displayAddressText = events[indexPath.row].address.line1
-        cell.eventLocationLabel.text = displayAddressText
+//        let displayAddressText = events[indexPath.row].address.line1
+//        cell.eventLocationLabel.text = displayAddressText
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

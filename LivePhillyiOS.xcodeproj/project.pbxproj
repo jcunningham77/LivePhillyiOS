@@ -12,6 +12,7 @@
 		1675677A2224E8E1006A0448 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 167567762224E8CC006A0448 /* .gitignore */; };
 		1675677B2224E8E1006A0448 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567772224E8CC006A0448 /* Fastfile */; };
 		1675677C2224E8E1006A0448 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567782224E8CC006A0448 /* Appfile */; };
+		167812B9222F32C900BD1DCB /* FBEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167812B8222F32C900BD1DCB /* FBEvent.swift */; };
 		167CE3072201292B00E1B470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3062201292B00E1B470 /* AppDelegate.swift */; };
 		167CE3092201292B00E1B470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE3082201292B00E1B470 /* ViewController.swift */; };
 		167CE30C2201292B00E1B470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167CE30A2201292B00E1B470 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		167567762224E8CC006A0448 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "../../Downloads/fastlane 2/.gitignore"; sourceTree = "<group>"; };
 		167567772224E8CC006A0448 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		167567782224E8CC006A0448 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		167812B8222F32C900BD1DCB /* FBEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBEvent.swift; sourceTree = "<group>"; };
 		167CE3032201292B00E1B470 /* LivePhillyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhillyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167CE3062201292B00E1B470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167CE3082201292B00E1B470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				16AFBB51221B498700FE9CD0 /* eventDataGenerated.json */,
 				167CE33122077D7B00E1B470 /* Venue.swift */,
 				16AFBB4F221B101400FE9CD0 /* Event.swift */,
+				167812B8222F32C900BD1DCB /* FBEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,12 +312,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -322,12 +330,17 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +363,7 @@
 				167CE32E22076B6600E1B470 /* ExploreTableViewCell.swift in Sources */,
 				167CE31B2201320900E1B470 /* WelcomeViewController.swift in Sources */,
 				167CE329220638F700E1B470 /* ExploreViewController.swift in Sources */,
+				167812B9222F32C900BD1DCB /* FBEvent.swift in Sources */,
 				16477A2522232D3E00CB1087 /* AuthViewController.swift in Sources */,
 				167CE32B220640B900E1B470 /* DefaultKeys.swift in Sources */,
 				167CE3092201292B00E1B470 /* ViewController.swift in Sources */,

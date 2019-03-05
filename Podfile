@@ -9,6 +9,7 @@ target 'LivePhillyiOS' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
   pod 'Alamofire'
