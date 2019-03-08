@@ -31,8 +31,6 @@
 		16AFBB4A221B06AA00FE9CD0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB49221B06AA00FE9CD0 /* EventViewController.swift */; };
 		16AFBB4D221B0B0200FE9CD0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */; };
 		16AFBB4E221B0B0200FE9CD0 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB4C221B0B0200FE9CD0 /* EventTableViewCell.xib */; };
-		16AFBB50221B101400FE9CD0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB4F221B101400FE9CD0 /* Event.swift */; };
-		16AFBB52221B498700FE9CD0 /* eventDataGenerated.json in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB51221B498700FE9CD0 /* eventDataGenerated.json */; };
 		91C351218103518F883F4EB1 /* Pods_LivePhillyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E28F08C3E534A13B5C148 /* Pods_LivePhillyiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +62,6 @@
 		16AFBB49221B06AA00FE9CD0 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		16AFBB4C221B0B0200FE9CD0 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
-		16AFBB4F221B101400FE9CD0 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		16AFBB51221B498700FE9CD0 /* eventDataGenerated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventDataGenerated.json; sourceTree = "<group>"; };
 		7EC406BC20996F46DE9F3CB5 /* Pods-LivePhillyiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhillyiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS.release.xcconfig"; sourceTree = "<group>"; };
 		812C678D352E863832B3EFF5 /* Pods-LivePhillyiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhillyiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,9 +154,7 @@
 		167CE33022077D4A00E1B470 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				16AFBB51221B498700FE9CD0 /* eventDataGenerated.json */,
 				167CE33122077D7B00E1B470 /* Venue.swift */,
-				16AFBB4F221B101400FE9CD0 /* Event.swift */,
 				167812B8222F32C900BD1DCB /* FBEvent.swift */,
 			);
 			path = Model;
@@ -250,7 +244,6 @@
 				16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */,
 				167CE3112201292D00E1B470 /* LaunchScreen.storyboard in Resources */,
 				167CE321220135B900E1B470 /* GoogleService-Info.plist in Resources */,
-				16AFBB52221B498700FE9CD0 /* eventDataGenerated.json in Resources */,
 				167CE30E2201292D00E1B470 /* Assets.xcassets in Resources */,
 				167CE32F22076B6600E1B470 /* ExploreTableViewCell.xib in Resources */,
 				16AFBB4E221B0B0200FE9CD0 /* EventTableViewCell.xib in Resources */,
@@ -310,7 +303,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -343,7 +336,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LivePhillyiOS/Pods-LivePhillyiOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -366,7 +359,6 @@
 				167CE32B220640B900E1B470 /* DefaultKeys.swift in Sources */,
 				167CE3092201292B00E1B470 /* ViewController.swift in Sources */,
 				167CE3072201292B00E1B470 /* AppDelegate.swift in Sources */,
-				16AFBB50221B101400FE9CD0 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

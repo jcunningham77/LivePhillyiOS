@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import Kingfisher
 
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -99,10 +98,20 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.addressLabel.text = displayAddressText
         
         // TODO add error handling for string URL
-        let urlString = venues[indexPath.row].imageURL.replacingOccurrences(of: "o.jpg", with: "120s.jpg")
-        print("string url = " + urlString)
-        let url = URL(string: urlString)
-        cell.venueImage.kf.setImage(with: url)
+        
+        
+        
+        
+        do {
+            // default explore image
+            let defaultURL = URL(string: "https://hmp.me/ch4y")
+            let urlString = URL(string: venues[indexPath.row].imageURL.replacingOccurrences(of: "o.jpg", with: "120s.jpg"))
+            let data = try Data(contentsOf: urlString ?? defaultURL!)
+            cell.venueImage.image = UIImage(data: data)
+        }
+        catch{
+            print(error)
+        }
         
         return cell
     }
