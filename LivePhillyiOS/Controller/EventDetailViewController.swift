@@ -7,27 +7,36 @@
 //
 
 import UIKit
+import PKHUD
 
 class EventDetailViewController: UIViewController {
     
     var event: FBEvent!
 
+    @IBOutlet var eventImageView: UIImageView!
+    @IBOutlet var eventTitleLabel: UILabel!
+    @IBOutlet var eventDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        HUD.show(.progress)
         print(event.description)
+        setupViews()
+        HUD.hide()
+        
+        
 
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    func setupViews() {
+        let url = URL(string: event.imageUrl)
+        eventImageView.kf.setImage(with: url)
+        eventTitleLabel.text = event.title
+        eventDescriptionLabel.text = event.description
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

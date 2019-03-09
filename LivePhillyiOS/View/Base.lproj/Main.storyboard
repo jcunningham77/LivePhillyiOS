@@ -278,13 +278,60 @@
                     <view key="view" contentMode="scaleToFill" id="jQE-6T-IRn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkwayLogoDark" translatesAutoresizingMaskIntoConstraints="NO" id="BUL-V6-Js8">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ffl-ci-1uC">
+                                <rect key="frame" x="0.0" y="64" width="414" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="XWn-Ab-JLc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-pD-ISL">
+                                <rect key="frame" x="15" y="301" width="384" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysm-f9-2p2">
+                                <rect key="frame" x="15" y="344.66666666666669" width="384" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BUL-V6-Js8" firstAttribute="top" secondItem="hQa-68-auC" secondAttribute="top" id="20F-gx-Gee"/>
+                            <constraint firstItem="E6l-pD-ISL" firstAttribute="centerX" secondItem="jQE-6T-IRn" secondAttribute="centerX" id="2ho-hA-q7B"/>
+                            <constraint firstItem="Ffl-ci-1uC" firstAttribute="leading" secondItem="hQa-68-auC" secondAttribute="leading" id="4o3-EJ-C7b"/>
+                            <constraint firstItem="Ffl-ci-1uC" firstAttribute="top" secondItem="hQa-68-auC" secondAttribute="top" id="52c-D7-06S"/>
+                            <constraint firstItem="ysm-f9-2p2" firstAttribute="centerX" secondItem="jQE-6T-IRn" secondAttribute="centerX" id="5D6-hK-iaz"/>
+                            <constraint firstItem="ysm-f9-2p2" firstAttribute="top" secondItem="E6l-pD-ISL" secondAttribute="bottom" constant="15" id="5ef-7W-xom"/>
+                            <constraint firstItem="BUL-V6-Js8" firstAttribute="leading" secondItem="hQa-68-auC" secondAttribute="leading" id="8jP-1Q-SEM"/>
+                            <constraint firstItem="E6l-pD-ISL" firstAttribute="top" secondItem="Ffl-ci-1uC" secondAttribute="bottom" constant="15" id="DFz-z8-bxO"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="BUL-V6-Js8" secondAttribute="trailing" id="Muh-tb-xH7"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="E6l-pD-ISL" secondAttribute="trailing" constant="15" id="PNp-Xo-K8H"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ysm-f9-2p2" secondAttribute="bottom" constant="15" id="S2L-Wn-fYD"/>
+                            <constraint firstItem="Ffl-ci-1uC" firstAttribute="centerX" secondItem="jQE-6T-IRn" secondAttribute="centerX" id="VfV-6i-uAG"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="Ffl-ci-1uC" secondAttribute="trailing" id="W4t-8m-2O6"/>
+                            <constraint firstItem="E6l-pD-ISL" firstAttribute="leading" secondItem="hQa-68-auC" secondAttribute="leading" constant="15" id="itr-EL-dug"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="bottom" secondItem="BUL-V6-Js8" secondAttribute="bottom" id="qP0-eb-jZk"/>
+                            <constraint firstItem="ysm-f9-2p2" firstAttribute="leading" secondItem="hQa-68-auC" secondAttribute="leading" constant="15" id="qeY-7M-xSP"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="ysm-f9-2p2" secondAttribute="trailing" constant="15" id="yrN-Mr-IhD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hQa-68-auC"/>
                     </view>
+                    <connections>
+                        <outlet property="eventDescriptionLabel" destination="ysm-f9-2p2" id="Jg9-Aa-sNy"/>
+                        <outlet property="eventImageView" destination="Ffl-ci-1uC" id="Q7g-Zd-rsj"/>
+                        <outlet property="eventTitleLabel" destination="E6l-pD-ISL" id="QnV-J2-g9X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbC-LM-oFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5966" y="1106"/>
+            <point key="canvasLocation" x="5965.217391304348" y="1105.4347826086957"/>
         </scene>
         <!--Explore View Controller-->
         <scene sceneID="E9p-Ul-gJR">
@@ -584,7 +631,7 @@
         <image name="parkwayLogoDark" width="195.75" height="291.75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hcG-UE-uwO"/>
-        <segue reference="gW9-fu-UDp"/>
+        <segue reference="i81-mI-Bie"/>
+        <segue reference="wUI-HN-8bT"/>
     </inferredMetricsTieBreakers>
 </document>
