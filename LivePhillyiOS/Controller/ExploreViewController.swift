@@ -9,10 +9,10 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
+import PKHUD
 
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    
     
     var venues: [Venue]!
     
@@ -25,24 +25,21 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var exploreTableView: UITableView!
     
-    
     override func viewDidLoad() {
         print("viewDidLoad")
+        HUD.show(.progress)
         super.viewDidLoad()
-        
         
         
         exploreTableView.delegate = self
         exploreTableView.dataSource = self
         exploreTableView.register(UINib(nibName: "ExploreTableViewCell", bundle:nil), forCellReuseIdentifier: "exploreTableViewCell")
-        
         configureTableView()
         
         Alamofire.request(url, method:.get, headers:headers).responseJSON {
             response in
             if response.result.isSuccess {
                 self.venues = [Venue]()
-                
                 let json : JSON = JSON(response.result.value!)
                 print("success, results data: \(json)")
                 print("looping through businesses in yelp response" )
@@ -59,21 +56,12 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     
                 }
-                
+                HUD.hide()
                 self.exploreTableView.reloadData()
-                
             } else {
                 print("error: \(String(describing: response.result.error ))" )
-                
             }
         }
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,7 +72,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("numberOfRowsInSection = returning 0")
             return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,26 +80,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier:"exploreTableViewCell", for: indexPath) as! ExploreTableViewCell
         cell.nameLabel.text = venues[indexPath.row].name
         let displayAddressText = venues[indexPath.row].location.displayAddress[0] + ", " + venues[indexPath.row].location.displayAddress[1];
-        
-        
         cell.addressLabel.text = displayAddressText
-        
-        // TODO add error handling for string URL
-        
-        
-        
-        
-        do {
-            // default explore image
-            let defaultURL = URL(string: "https://hmp.me/ch4y")
-            let urlString = URL(string: venues[indexPath.row].imageURL.replacingOccurrences(of: "o.jpg", with: "120s.jpg"))
-            let data = try Data(contentsOf: urlString ?? defaultURL!)
-            cell.venueImage.image = UIImage(data: data)
-        }
-        catch{
-            print(error)
-        }
-        
+        let urlString = URL(string: venues[indexPath.row].imageURL.replacingOccurrences(of: "o.jpg", with: "120s.jpg"))
+        cell.venueImage.kf.setImage(with: urlString)
         return cell
     }
     

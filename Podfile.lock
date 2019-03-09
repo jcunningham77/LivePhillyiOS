@@ -99,15 +99,16 @@ PODS:
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.17.0)
   - GTMSessionFetcher/Core (1.2.1)
+  - Kingfisher (5.1.1)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PKHUD (5.2.1)
   - Protobuf (3.6.1)
   - SkyFloatingLabelTextField (3.6.0)
-  - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -118,8 +119,9 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - Kingfisher (~> 5.0)
+  - PKHUD (~> 5.0)
   - SkyFloatingLabelTextField (~> 3.0)
-  - SVProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
@@ -140,11 +142,12 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - Kingfisher
     - leveldb-library
     - nanopb
+    - PKHUD
     - Protobuf
     - SkyFloatingLabelTextField
-    - SVProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -164,13 +167,14 @@ SPEC CHECKSUMS:
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: da1280693de2bf45cc384dc118002a13d578280e
+PODFILE CHECKSUM: 10dbf75eb1268591667784b71f7e5c53f231e180
 
 COCOAPODS: 1.5.3

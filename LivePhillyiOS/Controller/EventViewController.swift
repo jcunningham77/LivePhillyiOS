@@ -9,56 +9,50 @@
 import UIKit
 import SwiftyJSON
 import Firebase
+import Kingfisher
+import PKHUD
 
 class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
-
+    
     var events: [FBEvent]!
-
+    
     @IBOutlet var eventTableView: UITableView!
-
-
+    
     override func viewDidLoad() {
+        HUD.show(.progress)
         super.viewDidLoad()
-
         eventTableView.delegate = self
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: "EventTableViewCell", bundle:nil), forCellReuseIdentifier: "eventTableViewCell")
-
+        
         configureTableView()
-
-        do {
-
-
-            let db = Firestore.firestore()
-
-            db.collection("events").getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    self.events = [FBEvent]()
-                    for document in querySnapshot!.documents {
-                        print(document)
-                        let eventToAppend: FBEvent
-
-                        eventToAppend = FBEvent(fromFB: document)
-                        self.events.append(eventToAppend)
-                    }
+        let db = Firestore.firestore()
+        
+        db.collection("events").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.events = [FBEvent]()
+                for document in querySnapshot!.documents {
+                    print(document)
+                    let eventToAppend: FBEvent
                     
-                    self.eventTableView.reloadData()
+                    eventToAppend = FBEvent(fromFB: document)
+                    self.events.append(eventToAppend)
                 }
+                
+                self.eventTableView.reloadData()
+                HUD.hide()
             }
-            
-            self.eventTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-            var frame = CGRect.zero
-            frame.size.height = .leastNormalMagnitude
-            self.eventTableView.tableHeaderView = UIView(frame: frame)
-            self.eventTableView.tableFooterView = UIView(frame: frame)
-        } catch {
-            print("error reading from JSON file \(error)")
         }
-
+        
+        self.eventTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        var frame = CGRect.zero
+        frame.size.height = .leastNormalMagnitude
+        self.eventTableView.tableHeaderView = UIView(frame: frame)
+        self.eventTableView.tableFooterView = UIView(frame: frame)
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let events = events {
             print("numberOfRowsInSection = returning \(events.count)")
@@ -68,14 +62,14 @@ class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDa
             return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier:"eventTableViewCell", for: indexPath) as! EventTableViewCell
-
-
+        
+        
         cell.eventTitleLabel.text = events[indexPath.row].title
-
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
@@ -91,19 +85,11 @@ class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDa
             cell.eventDateLabel.text = "TBD"
         }
         
-        do {
-            let defaultURL = URL(string: "https://hmp.me/ch4x")
-            let url = URL(string: events[indexPath.row].imageUrl)
-            let data = try Data(contentsOf: url ?? defaultURL!)
-            cell.eventImageView.image = UIImage(data: data)
-        }
-        catch{
-            print(error)
-        }
-
+        let url = URL(string: events[indexPath.row].imageUrl)
+        cell.eventImageView.kf.setImage(with: url)
         return cell
     }
-
+    
     func configureTableView(){
         eventTableView.rowHeight = UITableView.automaticDimension
         eventTableView.estimatedRowHeight = 300

@@ -1,5 +1,6 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
 
 
 target 'LivePhillyiOS' do
@@ -11,11 +12,12 @@ target 'LivePhillyiOS' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-  pod 'SVProgressHUD'
+  pod 'PKHUD', '~> 5.0'
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Kingfisher', '~> 5.0'
 
 end
