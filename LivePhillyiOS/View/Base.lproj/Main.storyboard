@@ -262,7 +262,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9j0-VX-p1Q"/>
                     </view>
-                    <navigationItem key="navigationItem" id="q41-o5-fUB"/>
+                    <navigationItem key="navigationItem" title="Events" id="q41-o5-fUB"/>
                     <connections>
                         <outlet property="eventTableView" destination="7qa-hs-qme" id="KCA-1p-Csa"/>
                         <segue destination="hmB-V4-eU1" kind="show" identifier="EventListToDetail" id="qun-24-Lbh"/>
@@ -334,7 +334,7 @@
             </objects>
             <point key="canvasLocation" x="5965.217391304348" y="1105.4347826086957"/>
         </scene>
-        <!--Explore View Controller-->
+        <!--Explore-->
         <scene sceneID="E9p-Ul-gJR">
             <objects>
                 <viewController id="ULI-iK-B8p" customClass="ExploreViewController" customModule="LivePhillyiOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -400,7 +400,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KZf-7p-x5M"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fo0-pV-BCk"/>
+                    <navigationItem key="navigationItem" title="Explore" id="Fo0-pV-BCk"/>
                     <connections>
                         <outlet property="exploreTableView" destination="1Fi-SD-hPp" id="uQ5-Bk-QuK"/>
                         <outlet property="searchInputField" destination="e4F-sq-d4I" id="MmK-fA-DDP"/>

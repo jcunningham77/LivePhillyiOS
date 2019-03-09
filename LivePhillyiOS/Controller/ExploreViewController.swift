@@ -31,13 +31,16 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         print("viewDidLoad")
         
         super.viewDidLoad()
+        // MARK - search input field
         searchInputField.iconType = IconType.image
         searchInputField.delegate = self
         
+
+        
+        // MARK - table view initialization
         exploreTableView.delegate = self
         exploreTableView.dataSource = self
         exploreTableView.register(UINib(nibName: "ExploreTableViewCell", bundle:nil), forCellReuseIdentifier: "exploreTableViewCell")
-        
         configureTableView()
         
         fetchData(searchTerm: nil)
