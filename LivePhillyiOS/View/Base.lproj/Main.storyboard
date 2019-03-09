@@ -290,13 +290,20 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-pD-ISL">
-                                <rect key="frame" x="15" y="301" width="384" height="28.666666666666686"/>
+                                <rect key="frame" x="15" y="352" width="384" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysm-f9-2p2">
-                                <rect key="frame" x="15" y="344.66666666666669" width="384" height="20.333333333333314"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsvp_off" translatesAutoresizingMaskIntoConstraints="NO" id="zdp-KO-fsm" userLabel="RSVP Image View">
+                                <rect key="frame" x="354" y="294" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2lv-ex-twl"/>
+                                    <constraint firstAttribute="width" constant="50" id="Dr3-7c-DEk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysm-f9-2p2">
+                                <rect key="frame" x="15" y="378" width="384" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -306,13 +313,15 @@
                         <constraints>
                             <constraint firstItem="BUL-V6-Js8" firstAttribute="top" secondItem="hQa-68-auC" secondAttribute="top" id="20F-gx-Gee"/>
                             <constraint firstItem="E6l-pD-ISL" firstAttribute="centerX" secondItem="jQE-6T-IRn" secondAttribute="centerX" id="2ho-hA-q7B"/>
+                            <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="zdp-KO-fsm" secondAttribute="trailing" constant="10" id="30a-AH-shl"/>
                             <constraint firstItem="Ffl-ci-1uC" firstAttribute="leading" secondItem="hQa-68-auC" secondAttribute="leading" id="4o3-EJ-C7b"/>
                             <constraint firstItem="Ffl-ci-1uC" firstAttribute="top" secondItem="hQa-68-auC" secondAttribute="top" id="52c-D7-06S"/>
                             <constraint firstItem="ysm-f9-2p2" firstAttribute="centerX" secondItem="jQE-6T-IRn" secondAttribute="centerX" id="5D6-hK-iaz"/>
                             <constraint firstItem="ysm-f9-2p2" firstAttribute="top" secondItem="E6l-pD-ISL" secondAttribute="bottom" constant="15" id="5ef-7W-xom"/>
                             <constraint firstItem="BUL-V6-Js8" firstAttribute="leading" secondItem="hQa-68-auC" secondAttribute="leading" id="8jP-1Q-SEM"/>
-                            <constraint firstItem="E6l-pD-ISL" firstAttribute="top" secondItem="Ffl-ci-1uC" secondAttribute="bottom" constant="15" id="DFz-z8-bxO"/>
+                            <constraint firstItem="E6l-pD-ISL" firstAttribute="top" secondItem="zdp-KO-fsm" secondAttribute="bottom" constant="8" id="9Hn-Tx-6g2"/>
                             <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="BUL-V6-Js8" secondAttribute="trailing" id="Muh-tb-xH7"/>
+                            <constraint firstItem="zdp-KO-fsm" firstAttribute="top" secondItem="Ffl-ci-1uC" secondAttribute="bottom" constant="8" id="O7T-72-tP0"/>
                             <constraint firstItem="hQa-68-auC" firstAttribute="trailing" secondItem="E6l-pD-ISL" secondAttribute="trailing" constant="15" id="PNp-Xo-K8H"/>
                             <constraint firstItem="hQa-68-auC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ysm-f9-2p2" secondAttribute="bottom" constant="15" id="S2L-Wn-fYD"/>
                             <constraint firstItem="Ffl-ci-1uC" firstAttribute="centerX" secondItem="jQE-6T-IRn" secondAttribute="centerX" id="VfV-6i-uAG"/>
@@ -328,6 +337,7 @@
                         <outlet property="eventDescriptionLabel" destination="ysm-f9-2p2" id="Jg9-Aa-sNy"/>
                         <outlet property="eventImageView" destination="Ffl-ci-1uC" id="Q7g-Zd-rsj"/>
                         <outlet property="eventTitleLabel" destination="E6l-pD-ISL" id="QnV-J2-g9X"/>
+                        <outlet property="rsvpEventImage" destination="zdp-KO-fsm" id="C0p-Xa-GEK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbC-LM-oFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -645,6 +655,7 @@
         <image name="filterIcon" width="156.52174377441406" height="156.52174377441406"/>
         <image name="livePhillyLogo" width="283" height="80"/>
         <image name="parkwayLogoDark" width="195.75" height="291.75"/>
+        <image name="rsvp_off" width="156.52174377441406" height="156.52174377441406"/>
         <image name="searchIcon" width="156.52174377441406" height="156.52174377441406"/>
     </resources>
     <inferredMetricsTieBreakers>

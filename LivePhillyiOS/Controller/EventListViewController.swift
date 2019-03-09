@@ -16,19 +16,19 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
     
     var events: [FBEvent]!
     var eventToPass: FBEvent!
+    var db = Firestore.firestore()
     
     @IBOutlet var eventTableView: UITableView!
     
     override func viewDidLoad() {
-        HUD.show(.progress)
+        
         super.viewDidLoad()
-        eventTableView.delegate = self
-        eventTableView.dataSource = self
-        eventTableView.register(UINib(nibName: "EventTableViewCell", bundle:nil), forCellReuseIdentifier: "eventTableViewCell")
-        
-        configureTableView()
-        let db = Firestore.firestore()
-        
+        initializeTableView()
+        fetchData()
+    }
+    
+    func fetchData(){
+        HUD.show(.progress)
         db.collection("events").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -41,17 +41,35 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
                     eventToAppend = FBEvent(fromFB: document)
                     self.events.append(eventToAppend)
                 }
-                
                 self.eventTableView.reloadData()
-                HUD.hide()
             }
+            HUD.hide()
         }
+    }
+    // MARK segue methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if (segue.identifier == "EventListToDetail") {
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! EventDetailViewController
+            // your new view controller should have property that will store passed value
+            viewController.event = eventToPass
+        }
+    }
+    
+    // MARK table view methods
+    func initializeTableView(){
+        
+        eventTableView.delegate = self
+        eventTableView.dataSource = self
+        eventTableView.register(UINib(nibName: "EventTableViewCell", bundle:nil), forCellReuseIdentifier: "eventTableViewCell")
+        configureTableView()
         self.eventTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         var frame = CGRect.zero
         frame.size.height = .leastNormalMagnitude
         self.eventTableView.tableHeaderView = UIView(frame: frame)
         self.eventTableView.tableFooterView = UIView(frame: frame)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,16 +113,7 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         eventToPass = events[indexPath.row]
         self.performSegue(withIdentifier: "EventListToDetail", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "EventListToDetail") {
-            // initialize new view controller and cast it as your view controller
-            let viewController = segue.destination as! EventDetailViewController
-            // your new view controller should have property that will store passed value
-            viewController.event = eventToPass
-        }
-    }
+
     
     func configureTableView(){
         eventTableView.rowHeight = UITableView.automaticDimension
