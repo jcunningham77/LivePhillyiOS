@@ -12,9 +12,10 @@ import Firebase
 import Kingfisher
 import PKHUD
 
-class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
+class EventListViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
     var events: [FBEvent]!
+    var eventToPass: FBEvent!
     
     @IBOutlet var eventTableView: UITableView!
     
@@ -88,6 +89,21 @@ class EventViewController: UIViewController,  UITableViewDelegate, UITableViewDa
         let url = URL(string: events[indexPath.row].imageUrl)
         cell.eventImageView.kf.setImage(with: url)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        eventToPass = events[indexPath.row]
+        self.performSegue(withIdentifier: "EventListToDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "EventListToDetail") {
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! EventDetailViewController
+            // your new view controller should have property that will store passed value
+            viewController.event = eventToPass
+        }
     }
     
     func configureTableView(){
