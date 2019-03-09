@@ -211,30 +211,32 @@
         <!--Events View Controller-->
         <scene sceneID="kPe-kh-L8Y">
             <objects>
-                <viewController id="Q0r-63-9CP" userLabel="Events View Controller" customClass="EventListViewController" customModule="LivePhillyiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Events" id="Q0r-63-9CP" userLabel="Events View Controller" customClass="EventListViewController" customModule="LivePhillyiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Unr-Rc-ihS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nns-H8-ewU" userLabel="logoView">
-                                <rect key="frame" x="0.0" y="64" width="414" height="65"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro7-up-T2o" userLabel="Filter View">
+                                <rect key="frame" x="0.0" y="64" width="414" height="70"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livePhillyLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="gOi-xI-6bM" userLabel="logoImageView">
-                                        <rect key="frame" x="65.666666666666686" y="0.0" width="283" height="65"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vQL-Ag-OoC">
+                                        <rect key="frame" x="15" y="10" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="8qY-Ww-XTz"/>
+                                            <constraint firstAttribute="width" constant="50" id="UUF-KZ-Ofd"/>
+                                            <constraint firstAttribute="height" constant="50" id="zXp-Mw-eCE"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="gOi-xI-6bM" firstAttribute="top" secondItem="Nns-H8-ewU" secondAttribute="top" id="5gP-An-cq6"/>
-                                    <constraint firstItem="gOi-xI-6bM" firstAttribute="centerX" secondItem="Nns-H8-ewU" secondAttribute="centerX" id="8ye-jX-Mxp"/>
-                                    <constraint firstAttribute="bottom" secondItem="gOi-xI-6bM" secondAttribute="bottom" id="zcP-UA-N4J"/>
+                                    <constraint firstAttribute="height" constant="70" id="C3c-RH-bSH"/>
+                                    <constraint firstItem="vQL-Ag-OoC" firstAttribute="top" secondItem="ro7-up-T2o" secondAttribute="top" constant="10" id="Fmi-ZM-byI"/>
+                                    <constraint firstAttribute="bottom" secondItem="vQL-Ag-OoC" secondAttribute="bottom" constant="10" id="Lvo-V4-ada"/>
+                                    <constraint firstItem="vQL-Ag-OoC" firstAttribute="leading" secondItem="ro7-up-T2o" secondAttribute="leading" constant="15" id="jiX-KY-CMB"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-hs-qme" userLabel="Event Table View">
-                                <rect key="frame" x="0.0" y="132" width="414" height="555"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="301" id="kOC-tu-QCX" userLabel="EventCell" customClass="ExploreTableViewCell" customModule="LivePhillyiOS" customModuleProvider="target">
@@ -250,14 +252,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9j0-VX-p1Q" firstAttribute="trailing" secondItem="Nns-H8-ewU" secondAttribute="trailing" id="0E1-f9-J0z"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="trailing" secondItem="9j0-VX-p1Q" secondAttribute="trailing" id="3ZK-8s-esC"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="bottom" secondItem="9j0-VX-p1Q" secondAttribute="bottom" id="Be6-Gk-1wC"/>
-                            <constraint firstItem="Nns-H8-ewU" firstAttribute="centerX" secondItem="Unr-Rc-ihS" secondAttribute="centerX" id="GQd-tu-y1R"/>
-                            <constraint firstItem="Nns-H8-ewU" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="W02-Xp-uAz"/>
-                            <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="Nns-H8-ewU" secondAttribute="bottom" constant="3" id="oAk-zR-PKV"/>
+                            <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="ro7-up-T2o" secondAttribute="bottom" constant="5" id="dct-sH-F4U"/>
+                            <constraint firstItem="ro7-up-T2o" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="dyf-2X-rED"/>
+                            <constraint firstItem="9j0-VX-p1Q" firstAttribute="trailing" secondItem="ro7-up-T2o" secondAttribute="trailing" id="p4W-6k-gnf"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="qvR-Ug-emx"/>
-                            <constraint firstItem="Nns-H8-ewU" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="uMJ-IZ-dXh"/>
+                            <constraint firstItem="ro7-up-T2o" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="uSu-z6-LUU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9j0-VX-p1Q"/>
                     </view>
@@ -271,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="4982.608695652174" y="1104.6195652173915"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Event Detail-->
         <scene sceneID="G0E-3Y-ChQ">
             <objects>
-                <viewController id="hmB-V4-eU1" customClass="EventDetailViewController" customModule="LivePhillyiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Event Detail" id="hmB-V4-eU1" customClass="EventDetailViewController" customModule="LivePhillyiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jQE-6T-IRn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,25 +342,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uox-l3-Jpn" userLabel="logoView">
-                                <rect key="frame" x="0.0" y="64" width="414" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-XB-fqA" userLabel="Search View">
+                                <rect key="frame" x="0.0" y="64" width="414" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livePhillyLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="l2H-Gt-Xdf" userLabel="logoImageView">
-                                        <rect key="frame" x="65.666666666666686" y="0.0" width="283" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="JOY-Zo-wEL"/>
-                                        </constraints>
-                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e4F-sq-d4I" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="15" y="10" width="384" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="webSearch" keyboardAppearance="alert" returnKeyType="search"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="searchIcon"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconTypeValue">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="l2H-Gt-Xdf" firstAttribute="top" secondItem="Uox-l3-Jpn" secondAttribute="top" id="5d1-Vi-l6N"/>
-                                    <constraint firstItem="l2H-Gt-Xdf" firstAttribute="centerX" secondItem="Uox-l3-Jpn" secondAttribute="centerX" id="UEj-Z6-nZ6"/>
-                                    <constraint firstAttribute="height" constant="80" id="YS6-Fp-HD1"/>
+                                    <constraint firstAttribute="bottom" secondItem="e4F-sq-d4I" secondAttribute="bottom" constant="10" id="87z-fs-T33"/>
+                                    <constraint firstItem="e4F-sq-d4I" firstAttribute="top" secondItem="QjD-XB-fqA" secondAttribute="top" constant="10" id="N2X-WB-JEe"/>
+                                    <constraint firstItem="e4F-sq-d4I" firstAttribute="leading" secondItem="QjD-XB-fqA" secondAttribute="leading" constant="15" id="OcW-Fl-GwA"/>
+                                    <constraint firstAttribute="trailing" secondItem="e4F-sq-d4I" secondAttribute="trailing" constant="15" id="XMI-cg-tjm"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Fi-SD-hPp">
-                                <rect key="frame" x="0.0" y="144" width="414" height="543"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExploreCell" rowHeight="126" id="Kvm-0v-UNI">
@@ -375,23 +390,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="top" secondItem="Uox-l3-Jpn" secondAttribute="bottom" id="20D-zW-XAY"/>
-                            <constraint firstItem="Uox-l3-Jpn" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" id="3VJ-c9-KIc"/>
-                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" id="7v0-3L-8pK"/>
-                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="top" secondItem="Uox-l3-Jpn" secondAttribute="bottom" id="AlL-Pv-1V2"/>
-                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="top" secondItem="KZf-7p-x5M" secondAttribute="top" constant="80" id="E0Z-cU-D3n"/>
-                            <constraint firstItem="Uox-l3-Jpn" firstAttribute="top" secondItem="KZf-7p-x5M" secondAttribute="top" id="MfT-2n-PAy"/>
-                            <constraint firstItem="KZf-7p-x5M" firstAttribute="trailing" secondItem="1Fi-SD-hPp" secondAttribute="trailing" id="Qo9-1U-Rlc"/>
-                            <constraint firstItem="Uox-l3-Jpn" firstAttribute="trailing" secondItem="KZf-7p-x5M" secondAttribute="trailing" id="WKP-jo-dY2"/>
-                            <constraint firstItem="Uox-l3-Jpn" firstAttribute="trailing" secondItem="KZf-7p-x5M" secondAttribute="trailing" id="pOr-cT-fo7"/>
-                            <constraint firstItem="Uox-l3-Jpn" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" id="xie-hq-5aq"/>
-                            <constraint firstItem="KZf-7p-x5M" firstAttribute="bottom" secondItem="1Fi-SD-hPp" secondAttribute="bottom" id="xxX-SY-bzh"/>
+                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" id="Cq2-6a-8NJ"/>
+                            <constraint firstItem="QjD-XB-fqA" firstAttribute="top" secondItem="KZf-7p-x5M" secondAttribute="top" id="J5H-8d-mGg"/>
+                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="trailing" secondItem="KZf-7p-x5M" secondAttribute="trailing" id="KOv-bR-pLm"/>
+                            <constraint firstItem="KZf-7p-x5M" firstAttribute="bottom" secondItem="1Fi-SD-hPp" secondAttribute="bottom" id="MRw-ZY-qUT"/>
+                            <constraint firstItem="KZf-7p-x5M" firstAttribute="trailing" secondItem="QjD-XB-fqA" secondAttribute="trailing" id="Nwz-Jw-kGV"/>
+                            <constraint firstItem="QjD-XB-fqA" firstAttribute="leading" secondItem="KZf-7p-x5M" secondAttribute="leading" id="Y3z-wV-0RT"/>
+                            <constraint firstItem="1Fi-SD-hPp" firstAttribute="top" secondItem="QjD-XB-fqA" secondAttribute="bottom" id="i8z-02-waf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KZf-7p-x5M"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fo0-pV-BCk"/>
                     <connections>
                         <outlet property="exploreTableView" destination="1Fi-SD-hPp" id="uQ5-Bk-QuK"/>
+                        <outlet property="searchInputField" destination="e4F-sq-d4I" id="MmK-fA-DDP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wY4-aL-AZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -630,12 +642,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="filterIcon" width="156.52174377441406" height="156.52174377441406"/>
         <image name="livePhillyLogo" width="283" height="80"/>
-        <image name="livePhillyLogo.png" width="283" height="80"/>
         <image name="parkwayLogoDark" width="195.75" height="291.75"/>
+        <image name="searchIcon" width="156.52174377441406" height="156.52174377441406"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="i81-mI-Bie"/>
-        <segue reference="wUI-HN-8bT"/>
+        <segue reference="CI9-b8-zTV"/>
     </inferredMetricsTieBreakers>
 </document>

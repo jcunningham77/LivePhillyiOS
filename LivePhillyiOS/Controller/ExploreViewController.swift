@@ -11,12 +11,14 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import PKHUD
+import SkyFloatingLabelTextField
 
-class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var venues: [Venue]!
     
-    let url = "https://api.yelp.com/v3/businesses/search?location=philadelphia&categories=bubbletea"
+    @IBOutlet var searchInputField: SkyFloatingLabelTextFieldWithIcon!
+    let url = "https://api.yelp.com/v3/businesses/search?location=philadelphia"
     
     let headers: HTTPHeaders = [
         "Authorization": "Bearer WhfBmynX0CW4OUEgzAFQHr7x5jG95kMe_RyRtkpb2D1KKsJ78ZObcrXYUbwp74CaJEHJY-LYlD_PGKXcR1c-073EiX7N9a9NsgqgBkP_GbguQQ2zHFKXuwY7nR06XHYx"
@@ -27,23 +29,49 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         print("viewDidLoad")
-        HUD.show(.progress)
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        searchInputField.iconType = IconType.image
+        searchInputField.delegate = self
         
         exploreTableView.delegate = self
         exploreTableView.dataSource = self
         exploreTableView.register(UINib(nibName: "ExploreTableViewCell", bundle:nil), forCellReuseIdentifier: "exploreTableViewCell")
+        
         configureTableView()
         
-        Alamofire.request(url, method:.get, headers:headers).responseJSON {
+        fetchData(searchTerm: nil)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField == searchInputField && searchInputField.text?.count ?? 0 > 0) {
+            fetchData(searchTerm: searchInputField.text)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchInputField.resignFirstResponder()
+        return true
+    }
+    
+    func fetchData(searchTerm: String?){
+        HUD.show(.progress)
+        var searchUrl: String
+        if (searchTerm?.count ?? 0 > 0){
+            let urlEncodedSearchTerm = searchInputField.text!.replacingOccurrences(of: " ", with: "+")
+            searchUrl = url + "&categories=" + urlEncodedSearchTerm
+        } else {
+            searchUrl = url
+        }
+        print(" url = \(searchUrl))")
+        Alamofire.request(searchUrl, method:.get, headers:headers).responseJSON {
             response in
             if response.result.isSuccess {
                 self.venues = [Venue]()
                 let json : JSON = JSON(response.result.value!)
-                print("success, results data: \(json)")
-                print("looping through businesses in yelp response" )
+                print("success retrieving data from yelp")
                 
+                print("looping through businesses in yelp response" )
                 for (_, subJson) in json["businesses"] {
                     let decoder = JSONDecoder()
                     //                    do {
@@ -52,18 +80,24 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let venue = try? decoder.decode(Venue.self, from: data!)
                     
                     if let venueToAppend = venue {
+                        print("appending venue \(venue?.name ?? "no value found")")
                         self.venues.append(venueToAppend)
                     }
-                    
                 }
-                HUD.hide()
+                
                 self.exploreTableView.reloadData()
             } else {
+                // TODO error handling for UI
                 print("error: \(String(describing: response.result.error ))" )
             }
+            HUD.hide()
         }
     }
     
+    
+    
+    
+    // MARK: Table View Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let venues = venues {
             print("numberOfRowsInSection = returning zero\(venues.count)")

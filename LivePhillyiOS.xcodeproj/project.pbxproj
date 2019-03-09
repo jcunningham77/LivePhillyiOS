@@ -60,6 +60,7 @@
 		167CE32D22076B6600E1B470 /* ExploreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreTableViewCell.xib; sourceTree = "<group>"; };
 		167CE33122077D7B00E1B470 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		1695A04622336BEC00418E5C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		1695A04A223401CF00418E5C /* filterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filterIcon.png; path = /Users/jeffcunningham/iOSProjects/LivePhillyiOS/LivePhillyiOS/filterIcon.png; sourceTree = "<absolute>"; };
 		16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = livePhillyLogo.png; sourceTree = "<group>"; };
 		16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 				167CE3082201292B00E1B470 /* ViewController.swift */,
 				167CE320220135B900E1B470 /* GoogleService-Info.plist */,
 				167CE30D2201292D00E1B470 /* Assets.xcassets */,
+				1695A04A223401CF00418E5C /* filterIcon.png */,
 				16477A2022218BCF00CB1087 /* parkwayLogoDark.png */,
 				16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */,
 				167CE30F2201292D00E1B470 /* LaunchScreen.storyboard */,
