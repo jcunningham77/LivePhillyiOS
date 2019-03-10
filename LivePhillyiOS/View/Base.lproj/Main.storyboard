@@ -216,27 +216,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro7-up-T2o" userLabel="Filter View">
-                                <rect key="frame" x="0.0" y="64" width="414" height="70"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vQL-Ag-OoC">
-                                        <rect key="frame" x="15" y="10" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="UUF-KZ-Ofd"/>
-                                            <constraint firstAttribute="height" constant="50" id="zXp-Mw-eCE"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="C3c-RH-bSH"/>
-                                    <constraint firstItem="vQL-Ag-OoC" firstAttribute="top" secondItem="ro7-up-T2o" secondAttribute="top" constant="10" id="Fmi-ZM-byI"/>
-                                    <constraint firstAttribute="bottom" secondItem="vQL-Ag-OoC" secondAttribute="bottom" constant="10" id="Lvo-V4-ada"/>
-                                    <constraint firstItem="vQL-Ag-OoC" firstAttribute="leading" secondItem="ro7-up-T2o" secondAttribute="leading" constant="15" id="jiX-KY-CMB"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-hs-qme" userLabel="Event Table View">
-                                <rect key="frame" x="0.0" y="134" width="414" height="553"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="301" id="kOC-tu-QCX" userLabel="EventCell" customClass="ExploreTableViewCell" customModule="LivePhillyiOS" customModuleProvider="target">
@@ -253,16 +234,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="trailing" secondItem="9j0-VX-p1Q" secondAttribute="trailing" id="3ZK-8s-esC"/>
+                            <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="78f-cV-J3i"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="bottom" secondItem="9j0-VX-p1Q" secondAttribute="bottom" id="Be6-Gk-1wC"/>
-                            <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="ro7-up-T2o" secondAttribute="bottom" id="dct-sH-F4U"/>
-                            <constraint firstItem="ro7-up-T2o" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="dyf-2X-rED"/>
-                            <constraint firstItem="9j0-VX-p1Q" firstAttribute="trailing" secondItem="ro7-up-T2o" secondAttribute="trailing" id="p4W-6k-gnf"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="qvR-Ug-emx"/>
-                            <constraint firstItem="ro7-up-T2o" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="uSu-z6-LUU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9j0-VX-p1Q"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" id="q41-o5-fUB"/>
+                    <navigationItem key="navigationItem" title="Events" id="TjJ-Rt-SNK"/>
                     <connections>
                         <outlet property="eventTableView" destination="7qa-hs-qme" id="KCA-1p-Csa"/>
                         <segue destination="hmB-V4-eU1" kind="show" identifier="EventListToDetail" id="qun-24-Lbh"/>
@@ -652,7 +630,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filterIcon" width="156.52174377441406" height="156.52174377441406"/>
         <image name="livePhillyLogo" width="283" height="80"/>
         <image name="parkwayLogoDark" width="195.75" height="291.75"/>
         <image name="rsvp_off" width="156.52174377441406" height="156.52174377441406"/>

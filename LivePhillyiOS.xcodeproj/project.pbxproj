@@ -28,6 +28,7 @@
 		167CE32F22076B6600E1B470 /* ExploreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167CE32D22076B6600E1B470 /* ExploreTableViewCell.xib */; };
 		167CE33222077D7B00E1B470 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE33122077D7B00E1B470 /* Venue.swift */; };
 		1695A04722336BEC00418E5C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1695A04622336BEC00418E5C /* EventDetailViewController.swift */; };
+		1695A04C2235842E00418E5C /* filterIcon_barButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1695A04B2235842E00418E5C /* filterIcon_barButton.png */; };
 		16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */; };
 		16AFBB4A221B06AA00FE9CD0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */; };
 		16AFBB4D221B0B0200FE9CD0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 		167CE33122077D7B00E1B470 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		1695A04622336BEC00418E5C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		1695A04A223401CF00418E5C /* filterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filterIcon.png; path = /Users/jeffcunningham/iOSProjects/LivePhillyiOS/LivePhillyiOS/filterIcon.png; sourceTree = "<absolute>"; };
+		1695A04B2235842E00418E5C /* filterIcon_barButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filterIcon_barButton.png; sourceTree = "<group>"; };
 		16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = livePhillyLogo.png; sourceTree = "<group>"; };
 		16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				167CE3082201292B00E1B470 /* ViewController.swift */,
 				167CE320220135B900E1B470 /* GoogleService-Info.plist */,
 				167CE30D2201292D00E1B470 /* Assets.xcassets */,
+				1695A04B2235842E00418E5C /* filterIcon_barButton.png */,
 				1695A04A223401CF00418E5C /* filterIcon.png */,
 				16477A2022218BCF00CB1087 /* parkwayLogoDark.png */,
 				16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */,
@@ -245,6 +248,7 @@
 			files = (
 				1675677C2224E8E1006A0448 /* Appfile in Resources */,
 				1675677A2224E8E1006A0448 /* .gitignore in Resources */,
+				1695A04C2235842E00418E5C /* filterIcon_barButton.png in Resources */,
 				1675677B2224E8E1006A0448 /* Fastfile in Resources */,
 				16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */,
 				167CE3112201292D00E1B470 /* LaunchScreen.storyboard in Resources */,

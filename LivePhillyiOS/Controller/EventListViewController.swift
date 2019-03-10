@@ -24,7 +24,18 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         
         super.viewDidLoad()
         initializeTableView()
+        
+        
+        let button1 = UIBarButtonItem(image: UIImage(named: "filterIcon_barButton"), style: .plain, target: self, action: #selector(openFilter))
+        self.navigationItem.leftBarButtonItem  = button1
+        
+        
         fetchData()
+    }
+    
+    @objc
+    func openFilter(){
+        print("open filter clicked")
     }
     
     func fetchData(){
