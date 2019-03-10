@@ -96,10 +96,11 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         
         if let dateParsed = date {
             dateFormatter.dateFormat = "MM"
-            let month = dateFormatter.string(from: dateParsed)
+            let monthOfYear = dateFormatter.string(from: dateParsed)
+            let monthAbbrev = dateFormatter.shortMonthSymbols[Int(monthOfYear) ?? 1]
             dateFormatter.dateFormat = "dd"
             let day = dateFormatter.string(from: dateParsed)
-            cell.eventDateLabel.text = day + month
+            cell.eventDateLabel.text = day + "\n" + monthAbbrev
         } else {
             cell.eventDateLabel.text = "TBD"
         }

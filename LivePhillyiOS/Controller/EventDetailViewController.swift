@@ -26,6 +26,7 @@ class EventDetailViewController: UIViewController {
         HUD.show(.progress)
         print(event.description)
         setupViews()
+        fetchRsvpSetting()
         HUD.hide()
     }
     
@@ -39,6 +40,32 @@ class EventDetailViewController: UIViewController {
         rsvpEventImage.isUserInteractionEnabled = true
         rsvpEventImage.addGestureRecognizer(singleTap)
         
+    }
+    
+    func fetchRsvpSetting(){
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            let uid = user!.uid
+            var rsvpRef: CollectionReference? = nil
+            rsvpRef = db.collection("rsvp")
+            
+            let rsvpQuery = rsvpRef?.whereField("eventId", isEqualTo: event.id)
+                .whereField("userId", isEqualTo: uid)
+            
+            rsvpQuery?.getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting rsvp: \(err)")
+                } else {
+                    if (querySnapshot?.documents.count ?? 0 > 0){
+                        print("rsvp found for this user in the database, updating RSVP Icon to on")
+                        self.rsvpEventImage.image = UIImage(named: "rsvp_on")!
+                    } else {
+                        print("no rsvp found for this user in the database, updating RSVP Icon to off")
+                        self.rsvpEventImage.image = UIImage(named: "rsvp_off")!
+                    }
+                }
+            }
+        }
     }
     
     @objc func rsvpClicked() {
@@ -56,23 +83,18 @@ class EventDetailViewController: UIViewController {
                 
                 var ref: DocumentReference? = nil
                 
-                ref = db.collection("rsvp").addDocument(data: [
-                    "eventId" : event.id,
-                    "userId" : uid
-                ]){ err in
+                ref = db.collection("rsvp")
+                        .addDocument(data: [
+                            "eventId" : event.id,
+                            "userId" : uid ]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")
                     } else {
                         print("Document added with ID: \(ref!.documentID)")
                     }
-                    
                 }
-                
-
             } else {
-                
                 rsvpEventImage.image = UIImage(named: "rsvp_off")!
-                
                 db.collection("rsvp")
                     .whereField("eventId", isEqualTo: event.id)
                     .whereField("userId", isEqualTo: uid)
@@ -86,7 +108,6 @@ class EventDetailViewController: UIViewController {
                         }
                 }
             }
-            
         }
         HUD.hide()
     }

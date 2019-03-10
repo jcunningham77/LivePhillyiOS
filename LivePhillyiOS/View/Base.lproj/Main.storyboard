@@ -236,7 +236,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-hs-qme" userLabel="Event Table View">
-                                <rect key="frame" x="0.0" y="139" width="414" height="548"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="301" id="kOC-tu-QCX" userLabel="EventCell" customClass="ExploreTableViewCell" customModule="LivePhillyiOS" customModuleProvider="target">
@@ -254,7 +254,7 @@
                         <constraints>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="trailing" secondItem="9j0-VX-p1Q" secondAttribute="trailing" id="3ZK-8s-esC"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="bottom" secondItem="9j0-VX-p1Q" secondAttribute="bottom" id="Be6-Gk-1wC"/>
-                            <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="ro7-up-T2o" secondAttribute="bottom" constant="5" id="dct-sH-F4U"/>
+                            <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="ro7-up-T2o" secondAttribute="bottom" id="dct-sH-F4U"/>
                             <constraint firstItem="ro7-up-T2o" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="dyf-2X-rED"/>
                             <constraint firstItem="9j0-VX-p1Q" firstAttribute="trailing" secondItem="ro7-up-T2o" secondAttribute="trailing" id="p4W-6k-gnf"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="qvR-Ug-emx"/>

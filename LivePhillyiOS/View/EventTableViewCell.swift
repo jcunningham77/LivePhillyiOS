@@ -17,7 +17,9 @@ class EventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        eventDateLabel.layer.cornerRadius =  eventDateLabel.frame.width/2
+        eventDateLabel.layer.masksToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
