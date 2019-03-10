@@ -64,6 +64,18 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GoogleUtilities/AppDelegateSwizzler (5.3.7):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -119,6 +131,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - GoogleSignIn
   - Kingfisher (~> 5.0)
   - PKHUD (~> 5.0)
   - SkyFloatingLabelTextField (~> 3.0)
@@ -138,6 +151,8 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - GoogleAppMeasurement
+    - GoogleSignIn
+    - GoogleToolboxForMac
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -163,6 +178,8 @@ SPEC CHECKSUMS:
   FirebaseFirestore: e95af4fe30552092d6e72a8f97ea475d93891b75
   FirebaseInstanceID: 4522aad88f69297622062c0e9ffccdee3dd9b151
   GoogleAppMeasurement: 008e04ecd8efedd97a693aea8634aefe220bd26e
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
@@ -175,6 +192,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 10dbf75eb1268591667784b71f7e5c53f231e180
+PODFILE CHECKSUM: 4e576189cea2f65a08af870162cdada0f4b1a8e9
 
 COCOAPODS: 1.5.3

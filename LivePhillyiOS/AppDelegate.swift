@@ -11,9 +11,12 @@ import Firebase
 import FirebaseFirestore
 import Fabric
 import Crashlytics
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+
+    
 
     var window: UIWindow?
 
@@ -21,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
         Fabric.with([Crashlytics.self])
         UIApplication.shared.statusBarStyle = .lightContent
         
@@ -31,6 +36,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 255/255, green: 48/255, blue: 48/255, alpha: 1)]
 
         return true
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        // ...
+        if let error = error {
+            print(error)
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        print("credential = \(credential.provider)")
+        
+        
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                print("error: \(error)")
+                return
+            } else {
+                print("user signed into LP with credential = \(String(describing: authResult?.additionalUserInfo))")
+                
+                let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let destinationViewController : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "TabBarContent") as! UITabBarController
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = destinationViewController
+                self.window?.makeKeyAndVisible()
+            }
+            // User is signed in
+            // ...
+        }
+        
+        
+        // ...
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

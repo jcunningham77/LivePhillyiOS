@@ -10,6 +10,7 @@ target 'LivePhillyiOS' do
   # Pods for LivePhillyiOS
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'PKHUD', '~> 5.0'

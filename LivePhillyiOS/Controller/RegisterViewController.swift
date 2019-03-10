@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import SkyFloatingLabelTextField
+import GoogleSignIn
 
-class RegisterViewController: AuthViewController, UITextFieldDelegate{
+class RegisterViewController: AuthViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     
@@ -22,6 +23,9 @@ class RegisterViewController: AuthViewController, UITextFieldDelegate{
         emailTextField.delegate = self
         passwordTextField.delegate = self
         errorMessageLabel.isHidden = true
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+
     }
     
     
