@@ -12,6 +12,7 @@ import FirebaseFirestore
 import Fabric
 import Crashlytics
 import GoogleSignIn
+import PKHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -47,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        HUD.show(.progress)
         // ...
         if let error = error {
             print(error)
@@ -66,13 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             } else {
                 print("user signed into LP with credential = \(String(describing: authResult?.additionalUserInfo))")
-                
+                let defaults = UserDefaults.standard
+                defaults.set(true, forKey: DefaultsKeys.authKey)
                 let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let destinationViewController : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "TabBarContent") as! UITabBarController
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                 self.window?.rootViewController = destinationViewController
                 self.window?.makeKeyAndVisible()
             }
+            HUD.hide()
+            
             // User is signed in
             // ...
         }

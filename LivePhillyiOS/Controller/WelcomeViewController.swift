@@ -26,7 +26,7 @@ class WelcomeViewController: UIViewController {
         let height = self.logoImage.frame.size.height
         let width = self.logoImage.frame.size.width
         self.logoImage.frame = CGRect(x: xPosition, y: yPosition, width:width, height: height)
-
+        
         yPosition = screenSize.height * 0.3
         
         
@@ -41,16 +41,13 @@ class WelcomeViewController: UIViewController {
     }
     
     func navigate() {
-        
-        self.performSegue(withIdentifier: "welcomeToRegister", sender: self)
-        
-//        let defaults = UserDefaults.standard
-//        let auth = defaults.bool(forKey: DefaultsKeys.authKey)
-//        if auth == true {
-//            print("WelcomeViewController: the user is already logged in")
-//            self.performSegue(withIdentifier: "welcomeToTabBar", sender: self)
-//        } else {
-//            self.performSegue(withIdentifier: "welcomeToLogin", sender: self)
-//        }
+        let defaults = UserDefaults.standard
+        let auth = defaults.bool(forKey: DefaultsKeys.authKey)
+        if auth == true {
+            print("WelcomeViewController: the user is already logged in")
+            self.performSegue(withIdentifier: "welcomeToTabBar", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "welcomeToLogin", sender: self)
+        }
     }
 }

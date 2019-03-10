@@ -27,10 +27,7 @@ class RegisterViewController: AuthViewController, UITextFieldDelegate, GIDSignIn
         GIDSignIn.sharedInstance().uiDelegate = self
 
     }
-    
-    
-    
-    
+
     @IBAction func register(_ sender: Any) {
         //TODO: Set up a new user on our Firebase database
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in

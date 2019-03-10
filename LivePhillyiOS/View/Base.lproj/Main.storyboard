@@ -156,18 +156,25 @@
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sorry, we don't have an account on record for that email address / password combination. Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-pS-Elv">
-                                <rect key="frame" x="20" y="321" width="374" height="49"/>
+                                <rect key="frame" x="20" y="344" width="374" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aly-L1-3w7" customClass="GIDSignInButton">
-                                <rect key="frame" x="30" y="265" width="354" height="48"/>
+                                <rect key="frame" x="30" y="246" width="354" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" - or - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-kU-2nu">
+                                <rect key="frame" x="178.33333333333334" y="309" width="57.333333333333343" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="qaw-kU-2nu" firstAttribute="top" secondItem="aly-L1-3w7" secondAttribute="bottom" constant="8" id="0Ss-cE-jWy"/>
                             <constraint firstAttribute="trailing" secondItem="Ltk-pS-Elv" secondAttribute="trailing" constant="20" id="19d-Ho-Z5R"/>
                             <constraint firstItem="9nv-Gz-yud" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" id="3NI-qS-WuO"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="6Qs-vs-vHE"/>
@@ -178,7 +185,6 @@
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="top" secondItem="0iY-wA-QUH" secondAttribute="top" id="JBA-8F-Fph"/>
                             <constraint firstItem="bSB-Vt-4nz" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="Kf5-Sq-OwK"/>
                             <constraint firstItem="Ltk-pS-Elv" firstAttribute="leading" secondItem="JSU-yA-68t" secondAttribute="leading" constant="20" id="MhA-XB-VpS"/>
-                            <constraint firstItem="Ltk-pS-Elv" firstAttribute="top" secondItem="aly-L1-3w7" secondAttribute="bottom" constant="8" id="OTk-le-vzr"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="R9b-aS-Iey"/>
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="bottom" secondItem="0iY-wA-QUH" secondAttribute="bottom" id="SSg-zF-bMy"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="top" secondItem="Ltk-pS-Elv" secondAttribute="bottom" constant="20" id="Se3-dM-cI9"/>
@@ -189,6 +195,7 @@
                             <constraint firstItem="aly-L1-3w7" firstAttribute="leading" secondItem="0iY-wA-QUH" secondAttribute="leading" constant="30" id="ZEf-vu-K8p"/>
                             <constraint firstItem="aly-L1-3w7" firstAttribute="top" secondItem="9nv-Gz-yud" secondAttribute="bottom" constant="115" id="awd-V4-V0j"/>
                             <constraint firstItem="dPS-fD-3ml" firstAttribute="top" secondItem="bSB-Vt-4nz" secondAttribute="bottom" constant="20" id="bUQ-g7-r8s"/>
+                            <constraint firstItem="qaw-kU-2nu" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="co5-SI-pMk"/>
                             <constraint firstItem="rfR-NL-wC3" firstAttribute="top" secondItem="dPS-fD-3ml" secondAttribute="bottom" constant="20" id="egD-72-eAC"/>
                             <constraint firstItem="rfR-NL-wC3" firstAttribute="centerX" secondItem="JSU-yA-68t" secondAttribute="centerX" id="fG2-NF-bst"/>
                             <constraint firstItem="0iY-wA-QUH" firstAttribute="trailing" secondItem="UFk-U9-P0D" secondAttribute="trailing" constant="30" id="fMF-14-XtR"/>
@@ -201,7 +208,7 @@
                             <constraint firstItem="Xdf-4v-xjC" firstAttribute="trailing" secondItem="0iY-wA-QUH" secondAttribute="trailing" id="qI5-c3-5yz"/>
                             <constraint firstItem="0iY-wA-QUH" firstAttribute="trailing" secondItem="bSB-Vt-4nz" secondAttribute="trailing" constant="30" id="rQa-5a-9KK"/>
                             <constraint firstItem="UFk-U9-P0D" firstAttribute="top" relation="lessThanOrEqual" secondItem="9nv-Gz-yud" secondAttribute="bottom" constant="240" id="sUW-RX-i0a"/>
-                            <constraint firstItem="Ltk-pS-Elv" firstAttribute="top" relation="lessThanOrEqual" secondItem="9nv-Gz-yud" secondAttribute="bottom" constant="171" id="zkq-MG-xDD"/>
+                            <constraint firstItem="Ltk-pS-Elv" firstAttribute="top" secondItem="qaw-kU-2nu" secondAttribute="bottom" constant="9" id="tIS-Wq-wWG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0iY-wA-QUH"/>
                     </view>
@@ -210,6 +217,7 @@
                         <outlet property="bottomConstraintForKeyboard" destination="Yj7-or-NTX" id="Pq2-i7-rwm"/>
                         <outlet property="emailTextField" destination="UFk-U9-P0D" id="Fr6-gO-9pi"/>
                         <outlet property="errorMessageLabel" destination="Ltk-pS-Elv" id="8fP-tu-5zu"/>
+                        <outlet property="googleSignInButton" destination="aly-L1-3w7" id="ypK-cS-15l"/>
                         <outlet property="passwordTextField" destination="bSB-Vt-4nz" id="UsY-zl-eKv"/>
                         <segue destination="FPX-uC-SPw" kind="show" identifier="registerToTabBar" id="wUI-HN-8bT"/>
                     </connections>
@@ -453,6 +461,19 @@
                                     <constraint firstAttribute="bottom" secondItem="O9x-5X-gA4" secondAttribute="bottom" id="vdA-pF-CEa"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbV-Ow-ns0" customClass="GIDSignInButton">
+                                <rect key="frame" x="30" y="231" width="354" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="POL-XY-MRq"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - or - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phv-L9-Tbn">
+                                <rect key="frame" x="178.33333333333334" y="281" width="57.333333333333343" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-Wp-5ab" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <rect key="frame" x="30" y="384" width="354" height="45"/>
                                 <color key="backgroundColor" white="0.75" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -558,26 +579,35 @@
                             <constraint firstItem="CoW-mE-5G2" firstAttribute="leading" secondItem="lE9-X0-fuy" secondAttribute="leading" constant="20" id="6aT-nd-hxY"/>
                             <constraint firstItem="lE9-X0-fuy" firstAttribute="trailing" secondItem="sX8-mr-1Vf" secondAttribute="trailing" constant="30" id="6jd-LS-oEG"/>
                             <constraint firstItem="AlI-Wp-5ab" firstAttribute="leading" secondItem="lE9-X0-fuy" secondAttribute="leading" constant="30" id="7N4-nY-CnR"/>
+                            <constraint firstItem="phv-L9-Tbn" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="BIc-Uc-A2E"/>
                             <constraint firstItem="fHd-8v-rmY" firstAttribute="top" secondItem="12T-ls-1TW" secondAttribute="bottom" constant="19" id="Es9-N1-i3O"/>
                             <constraint firstItem="lE9-X0-fuy" firstAttribute="trailing" secondItem="AlI-Wp-5ab" secondAttribute="trailing" constant="30" id="FNq-zW-OEJ"/>
+                            <constraint firstItem="CoW-mE-5G2" firstAttribute="top" secondItem="QbV-Ow-ns0" secondAttribute="bottom" constant="24" id="IKb-F4-e4E"/>
                             <constraint firstItem="sX8-mr-1Vf" firstAttribute="top" secondItem="AlI-Wp-5ab" secondAttribute="bottom" constant="10" id="IYl-yq-H5U"/>
                             <constraint firstItem="foj-kT-eec" firstAttribute="top" secondItem="lE9-X0-fuy" secondAttribute="top" id="KGF-oz-Fx6"/>
                             <constraint firstItem="12T-ls-1TW" firstAttribute="top" secondItem="sX8-mr-1Vf" secondAttribute="bottom" constant="20" id="KgW-eb-tc5"/>
                             <constraint firstItem="foj-kT-eec" firstAttribute="trailing" secondItem="lE9-X0-fuy" secondAttribute="trailing" id="Mei-jq-sZX"/>
                             <constraint firstItem="CoW-mE-5G2" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="ORf-h4-0d8"/>
+                            <constraint firstItem="QbV-Ow-ns0" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="OvC-cT-uVg"/>
                             <constraint firstItem="foj-kT-eec" firstAttribute="leading" secondItem="lE9-X0-fuy" secondAttribute="leading" id="REQ-BW-acn"/>
                             <constraint firstItem="gyi-zl-K3O" firstAttribute="top" secondItem="lE9-X0-fuy" secondAttribute="top" constant="45" id="UjF-2d-UdD"/>
                             <constraint firstItem="gyi-zl-K3O" firstAttribute="leading" secondItem="lE9-X0-fuy" secondAttribute="leading" id="Vxh-jy-Dxp"/>
                             <constraint firstItem="12T-ls-1TW" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="WnA-g6-TIq"/>
                             <constraint firstItem="12T-ls-1TW" firstAttribute="leading" secondItem="lE9-X0-fuy" secondAttribute="leading" constant="30" id="Wzl-kL-aFq"/>
+                            <constraint firstItem="phv-L9-Tbn" firstAttribute="top" secondItem="QbV-Ow-ns0" secondAttribute="bottom" constant="2" id="aZD-dC-Rj1"/>
+                            <constraint firstItem="lE9-X0-fuy" firstAttribute="trailing" secondItem="QbV-Ow-ns0" secondAttribute="trailing" constant="30" id="bDf-Xz-GdJ"/>
+                            <constraint firstItem="phv-L9-Tbn" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="bI0-cr-atU"/>
                             <constraint firstItem="lE9-X0-fuy" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="fHd-8v-rmY" secondAttribute="bottom" constant="43" id="cD1-RD-jry"/>
+                            <constraint firstItem="QbV-Ow-ns0" firstAttribute="top" secondItem="gyi-zl-K3O" secondAttribute="bottom" constant="81" id="eAx-AZ-NhL"/>
                             <constraint firstItem="AlI-Wp-5ab" firstAttribute="top" relation="lessThanOrEqual" secondItem="gyi-zl-K3O" secondAttribute="bottom" constant="234" id="evk-tQ-vak"/>
+                            <constraint firstItem="QbV-Ow-ns0" firstAttribute="leading" secondItem="lE9-X0-fuy" secondAttribute="leading" constant="30" id="h2M-9M-hlU"/>
                             <constraint firstItem="AlI-Wp-5ab" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="iUz-cq-ZeM"/>
                             <constraint firstItem="sX8-mr-1Vf" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="ipB-3B-jac"/>
                             <constraint firstItem="AlI-Wp-5ab" firstAttribute="top" secondItem="CoW-mE-5G2" secondAttribute="bottom" constant="20" id="jQj-47-fox"/>
                             <constraint firstItem="gyi-zl-K3O" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="l8a-2c-58v"/>
                             <constraint firstItem="lE9-X0-fuy" firstAttribute="trailing" secondItem="12T-ls-1TW" secondAttribute="trailing" constant="30" id="lKb-Nk-MnF"/>
                             <constraint firstItem="fHd-8v-rmY" firstAttribute="centerX" secondItem="DuQ-qz-eth" secondAttribute="centerX" id="n2J-lJ-euP"/>
+                            <constraint firstItem="phv-L9-Tbn" firstAttribute="top" secondItem="QbV-Ow-ns0" secondAttribute="bottom" constant="2" id="tOs-yR-Y1K"/>
                             <constraint firstItem="gyi-zl-K3O" firstAttribute="trailing" secondItem="lE9-X0-fuy" secondAttribute="trailing" id="yPv-cu-dJq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lE9-X0-fuy"/>
@@ -587,6 +617,7 @@
                         <outlet property="bottomConstraintForKeyboard" destination="cD1-RD-jry" id="28k-vk-l96"/>
                         <outlet property="emailTextField" destination="AlI-Wp-5ab" id="zCC-oP-fQb"/>
                         <outlet property="errorLabel" destination="CoW-mE-5G2" id="bSn-eD-seh"/>
+                        <outlet property="googleSignInButton" destination="QbV-Ow-ns0" id="AWe-Pb-VlY"/>
                         <outlet property="passwordTextField" destination="sX8-mr-1Vf" id="day-JA-FgB"/>
                         <outlet property="registerButton" destination="fHd-8v-rmY" id="xh0-ho-1H4"/>
                         <segue destination="FPX-uC-SPw" kind="show" identifier="loginToTabBar" id="CI9-b8-zTV"/>
@@ -648,6 +679,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="i81-mI-Bie"/>
         <segue reference="wUI-HN-8bT"/>
-        <segue reference="UGq-zR-VXG"/>
+        <segue reference="7NO-NS-ORz"/>
     </inferredMetricsTieBreakers>
 </document>

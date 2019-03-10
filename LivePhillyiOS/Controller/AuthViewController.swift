@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
-
+import GoogleSignIn
 class AuthViewController: UIViewController {
     
     
     @IBOutlet var bottomConstraintForKeyboard: NSLayoutConstraint!
+    @IBOutlet var googleSignInButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,8 @@ class AuthViewController: UIViewController {
         let t = UITapGestureRecognizer(target: self, action: #selector(clearKeyboard))
         view.addGestureRecognizer(t)
         t.cancelsTouchesInView = false
-        
-        // Do any additional setup after loading the view.
+        googleSignInButton.colorScheme = GIDSignInButtonColorScheme.dark
+        googleSignInButton.style = GIDSignInButtonStyle.wide
     }
     
     func parseAuthErrorCode(_ errCode: AuthErrorCode, _ error: Error?, _ textLabel: UILabel) {
@@ -36,7 +37,7 @@ class AuthViewController: UIViewController {
         default:
             textLabel.text = "Sorry, there was an error trying to register your account. Please try again."
             textLabel.isHidden=false
-            print("Create User Error: \(error)")
+            print("Create User Error: \(String(describing: error))")
         }
     }
     
