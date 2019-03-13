@@ -234,6 +234,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbZ-v3-c8T" userLabel="DrawerContainer">
+                                <rect key="frame" x="0.0" y="64" width="105" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kIg-hi-wEh">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dm-ra-lsV" userLabel="My Events">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="105" id="1Hh-xg-pSb"/>
+                                                    <constraint firstAttribute="height" constant="30" id="nhv-uS-779"/>
+                                                </constraints>
+                                                <state key="normal" title="My Events">
+                                                    <color key="titleColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="APz-Ia-rIr" kind="show" id="58i-6L-7bb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-3E-LBX" userLabel="My Interests">
+                                                <rect key="frame" x="0.0" y="30" width="105" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="105" id="IGH-XC-Hdv"/>
+                                                    <constraint firstAttribute="height" constant="30" id="rWf-hI-Ce8"/>
+                                                </constraints>
+                                                <state key="normal" title="My Interests"/>
+                                                <connections>
+                                                    <segue destination="LE3-dA-Y01" kind="show" id="YDe-p3-NXP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="DL5-3E-LBX" firstAttribute="top" secondItem="1Dm-ra-lsV" secondAttribute="bottom" id="VgL-25-wzd"/>
+                                            <constraint firstItem="DL5-3E-LBX" firstAttribute="leading" secondItem="kIg-hi-wEh" secondAttribute="leading" id="XdC-zl-Gtj"/>
+                                            <constraint firstItem="1Dm-ra-lsV" firstAttribute="leading" secondItem="kIg-hi-wEh" secondAttribute="leading" id="con-9Q-UdL"/>
+                                            <constraint firstItem="1Dm-ra-lsV" firstAttribute="top" secondItem="kIg-hi-wEh" secondAttribute="top" id="hh5-aI-f63"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kIg-hi-wEh" firstAttribute="top" secondItem="vbZ-v3-c8T" secondAttribute="top" id="8aG-jC-ZOf"/>
+                                    <constraint firstItem="kIg-hi-wEh" firstAttribute="top" secondItem="vbZ-v3-c8T" secondAttribute="top" id="9ie-1p-bip"/>
+                                    <constraint firstAttribute="width" constant="105" id="dOm-0Z-kAA"/>
+                                    <constraint firstAttribute="height" constant="150" id="eiR-qf-Y9w"/>
+                                    <constraint firstItem="kIg-hi-wEh" firstAttribute="leading" secondItem="vbZ-v3-c8T" secondAttribute="leading" id="nht-rV-Q4K"/>
+                                    <constraint firstItem="kIg-hi-wEh" firstAttribute="leading" secondItem="vbZ-v3-c8T" secondAttribute="leading" id="wZz-CW-QrS"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-hs-qme" userLabel="Event Table View">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,12 +303,16 @@
                             <constraint firstItem="7qa-hs-qme" firstAttribute="trailing" secondItem="9j0-VX-p1Q" secondAttribute="trailing" id="3ZK-8s-esC"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="78f-cV-J3i"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="bottom" secondItem="9j0-VX-p1Q" secondAttribute="bottom" id="Be6-Gk-1wC"/>
+                            <constraint firstItem="vbZ-v3-c8T" firstAttribute="top" secondItem="9j0-VX-p1Q" secondAttribute="top" id="SMK-6D-F9a"/>
+                            <constraint firstItem="vbZ-v3-c8T" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="jHV-ms-5GQ"/>
                             <constraint firstItem="7qa-hs-qme" firstAttribute="leading" secondItem="9j0-VX-p1Q" secondAttribute="leading" id="qvR-Ug-emx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9j0-VX-p1Q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="TjJ-Rt-SNK"/>
                     <connections>
+                        <outlet property="eventTableLeadingConstraint" destination="qvR-Ug-emx" id="gjf-6E-PjZ"/>
+                        <outlet property="eventTableTrailingConstraint" destination="3ZK-8s-esC" id="H5G-ot-gdQ"/>
                         <outlet property="eventTableView" destination="7qa-hs-qme" id="KCA-1p-Csa"/>
                         <segue destination="hmB-V4-eU1" kind="show" identifier="EventListToDetail" id="qun-24-Lbh"/>
                     </connections>
@@ -668,6 +721,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bw9-v4-lso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4075.36231884058" y="1104.6195652173915"/>
+        </scene>
+        <!--My Events-->
+        <scene sceneID="dXI-Gm-JDh">
+            <objects>
+                <viewController title="My Events" id="APz-Ia-rIr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fiu-Yq-TwK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eBy-m6-DQg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQs-1e-FvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4738" y="1841"/>
+        </scene>
+        <!--My Interests-->
+        <scene sceneID="hca-70-Cak">
+            <objects>
+                <viewController title="My Interests" id="LE3-dA-Y01" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NaQ-gr-7Zr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XI2-6L-iTZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhk-Ii-PEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5483" y="1842"/>
         </scene>
     </scenes>
     <resources>

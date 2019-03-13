@@ -20,6 +20,11 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
     
     @IBOutlet var eventTableView: UITableView!
     
+    @IBOutlet var eventTableTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var eventTableLeadingConstraint: NSLayoutConstraint!
+    
+    var myAccountDrawerIsVisible: Bool = false
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -29,6 +34,9 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         let button1 = UIBarButtonItem(image: UIImage(named: "filterIcon_barButton"), style: .plain, target: self, action: #selector(openFilter))
         self.navigationItem.rightBarButtonItem  = button1
         
+        let profileBarButton = UIBarButtonItem(image: UIImage(named: "defaultProfileIcon"), style: .plain, target: self, action: #selector(openAccountDrawer))
+        self.navigationItem.leftBarButtonItem = profileBarButton
+        
         
         fetchData()
     }
@@ -36,6 +44,21 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
     @objc
     func openFilter(){
         print("open filter clicked")
+        
+    }
+    
+    @objc
+    func openAccountDrawer(){
+        print("open drawer clicked")
+        if (!myAccountDrawerIsVisible){
+            eventTableLeadingConstraint.constant = 150
+            eventTableTrailingConstraint.constant = -150
+            myAccountDrawerIsVisible = true
+        } else {
+            eventTableLeadingConstraint.constant = 0
+            eventTableTrailingConstraint.constant = 0
+            myAccountDrawerIsVisible = false
+        }
     }
     
     func fetchData(){
