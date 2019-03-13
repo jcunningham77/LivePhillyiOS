@@ -27,7 +27,7 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         
         
         let button1 = UIBarButtonItem(image: UIImage(named: "filterIcon_barButton"), style: .plain, target: self, action: #selector(openFilter))
-        self.navigationItem.leftBarButtonItem  = button1
+        self.navigationItem.rightBarButtonItem  = button1
         
         
         fetchData()
