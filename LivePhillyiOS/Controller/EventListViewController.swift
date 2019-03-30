@@ -41,6 +41,10 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         fetchData()
     }
     
+    override func viewDidAppear(_ animated:Bool){
+        fetchData()
+    }
+    
     @objc
     func openFilter(){
         print("open filter clicked")
@@ -135,9 +139,17 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
             dateFormatter.dateFormat = "dd"
             let day = dateFormatter.string(from: dateParsed)
             cell.eventDateLabel.text = day + "\n" + monthAbbrev
+            
+            dateFormatter.dateFormat = "h:mm a ', ' MMMM d, yyyy"
+            dateFormatter.amSymbol = "AM"
+            dateFormatter.pmSymbol = "PM"
+            let shortDate = dateFormatter.string(from: dateParsed)
+            cell.eventTimeLabel.text = shortDate
         } else {
             cell.eventDateLabel.text = "TBD"
         }
+        
+//        let venue = events[indexPath.row].eventVenue.location.name
         
         let url = URL(string: events[indexPath.row].imageUrl)
         cell.eventImageView.kf.setImage(with: url)
