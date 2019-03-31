@@ -18,7 +18,8 @@ class FBEvent {
     let reservationLink: String
     let imageUrl: String
     let phone, date: String
-//    let venueName: String
+    let venueDictionary: NSDictionary
+    
 
 
     init (fromFB data: QueryDocumentSnapshot) {
@@ -32,15 +33,8 @@ class FBEvent {
         phone = data.get("phone") as? String ?? "" ;
         date = data.get("date") as? String ?? "" ;
         over21 = data.get("over21") as? Bool ?? false ;
-        
-        let eventVenueNameFieldPath = FieldPath(["eventVenue","location","name"])
-        let eventVenueName = data.get(eventVenueNameFieldPath)
-        
-        // USE THS 
-        data.get("eventVenue") as? NSDictionary
-        
-        
-        attributes = ["Breakfast","Lunch"];
+        venueDictionary = data.get("eventVenue") as? NSDictionary ?? [String: String]() as NSDictionary
+        attributes = data.get("attributes") as? [String] ?? [String]();
     }
 
 }

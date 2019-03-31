@@ -55,12 +55,18 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
     func openAccountDrawer(){
         print("open drawer clicked")
         if (!myAccountDrawerIsVisible){
-            eventTableLeadingConstraint.constant = 150
-            eventTableTrailingConstraint.constant = -150
+            UIView.animate(withDuration: 0.40, delay:0.0, options:[.curveEaseInOut],animations:{
+                self.eventTableLeadingConstraint.constant = 150
+                self.eventTableTrailingConstraint.constant = 150
+                self.view.layoutIfNeeded()
+            }, completion: nil)
             myAccountDrawerIsVisible = true
         } else {
-            eventTableLeadingConstraint.constant = 0
-            eventTableTrailingConstraint.constant = 0
+            UIView.animate(withDuration: 0.40, delay:0.0, options:[.curveEaseInOut],animations:{
+                self.eventTableLeadingConstraint.constant = 0
+                self.eventTableTrailingConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }, completion:nil)
             myAccountDrawerIsVisible = false
         }
     }
@@ -140,7 +146,7 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
             let day = dateFormatter.string(from: dateParsed)
             cell.eventDateLabel.text = day + "\n" + monthAbbrev
             
-            dateFormatter.dateFormat = "h:mm a ', ' MMMM d, yyyy"
+            dateFormatter.dateFormat = "h:mm a', ' MMMM d, yyyy"
             dateFormatter.amSymbol = "AM"
             dateFormatter.pmSymbol = "PM"
             let shortDate = dateFormatter.string(from: dateParsed)
@@ -149,7 +155,17 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
             cell.eventDateLabel.text = "TBD"
         }
         
-//        let venue = events[indexPath.row].eventVenue.location.name
+        //build location label
+        var locationLabel: String
+        locationLabel = events[indexPath.row].venueDictionary.object(forKey: "name") as? String ?? ""
+        let venueLocationDictionary = events[indexPath.row].venueDictionary.object(forKey: "location") as? NSDictionary
+        
+        for addressField in venueLocationDictionary?.object(forKey: "display_address") as? [String] ?? [String](){
+            locationLabel = locationLabel + ", " + addressField
+        }
+        
+        cell.eventLocationLabel.text = locationLabel
+        
         
         let url = URL(string: events[indexPath.row].imageUrl)
         cell.eventImageView.kf.setImage(with: url)
@@ -160,7 +176,7 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         eventToPass = events[indexPath.row]
         self.performSegue(withIdentifier: "EventListToDetail", sender: self)
     }
-
+    
     
     func configureTableView(){
         eventTableView.rowHeight = UITableView.automaticDimension

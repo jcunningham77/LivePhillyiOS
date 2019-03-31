@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 16477A2022218BCF00CB1087 /* parkwayLogoDark.png */; };
 		16477A2522232D3E00CB1087 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16477A2422232D3E00CB1087 /* AuthViewController.swift */; };
+		166DEE97225169EF00D851D1 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DEE96225169EF00D851D1 /* MyEventsViewController.swift */; };
 		1675677A2224E8E1006A0448 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 167567762224E8CC006A0448 /* .gitignore */; };
 		1675677B2224E8E1006A0448 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567772224E8CC006A0448 /* Fastfile */; };
 		1675677C2224E8E1006A0448 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567782224E8CC006A0448 /* Appfile */; };
@@ -41,6 +42,7 @@
 		107E28F08C3E534A13B5C148 /* Pods_LivePhillyiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhillyiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16477A2022218BCF00CB1087 /* parkwayLogoDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkwayLogoDark.png; sourceTree = "<group>"; };
 		16477A2422232D3E00CB1087 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		166DEE96225169EF00D851D1 /* MyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
 		167567762224E8CC006A0448 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "../../Downloads/fastlane 2/.gitignore"; sourceTree = "<group>"; };
 		167567772224E8CC006A0448 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		167567782224E8CC006A0448 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */,
 				16477A2422232D3E00CB1087 /* AuthViewController.swift */,
 				1695A04622336BEC00418E5C /* EventDetailViewController.swift */,
+				166DEE96225169EF00D851D1 /* MyEventsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AFBB4D221B0B0200FE9CD0 /* EventTableViewCell.swift in Sources */,
+				166DEE97225169EF00D851D1 /* MyEventsViewController.swift in Sources */,
 				167CE31D2201324100E1B470 /* LoginViewController.swift in Sources */,
 				16AFBB4A221B06AA00FE9CD0 /* EventListViewController.swift in Sources */,
 				167CE33222077D7B00E1B470 /* Venue.swift in Sources */,
