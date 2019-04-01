@@ -36,5 +36,20 @@ class FBEvent {
         venueDictionary = data.get("eventVenue") as? NSDictionary ?? [String: String]() as NSDictionary
         attributes = data.get("attributes") as? [String] ?? [String]();
     }
+    
+    init (fromFB data: DocumentSnapshot) {
+        print(data);
+        
+        id = data.documentID;
+        title = data.get("title") as? String ?? "" ;
+        description = data.get("description") as? String ?? "" ;
+        reservationLink = data.get("reservationLink") as? String ?? "" ;
+        imageUrl = data.get("imageUrl") as? String ?? "" ;
+        phone = data.get("phone") as? String ?? "" ;
+        date = data.get("date") as? String ?? "" ;
+        over21 = data.get("over21") as? Bool ?? false ;
+        venueDictionary = data.get("eventVenue") as? NSDictionary ?? [String: String]() as NSDictionary
+        attributes = data.get("attributes") as? [String] ?? [String]();
+    }
 
 }
