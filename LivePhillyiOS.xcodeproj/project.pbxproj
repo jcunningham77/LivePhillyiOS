@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 16477A2022218BCF00CB1087 /* parkwayLogoDark.png */; };
 		16477A2522232D3E00CB1087 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16477A2422232D3E00CB1087 /* AuthViewController.swift */; };
+		166DEE97225169EF00D851D1 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DEE96225169EF00D851D1 /* MyEventsViewController.swift */; };
 		1675677A2224E8E1006A0448 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 167567762224E8CC006A0448 /* .gitignore */; };
 		1675677B2224E8E1006A0448 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567772224E8CC006A0448 /* Fastfile */; };
 		1675677C2224E8E1006A0448 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567782224E8CC006A0448 /* Appfile */; };
@@ -29,6 +30,7 @@
 		167CE33222077D7B00E1B470 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167CE33122077D7B00E1B470 /* Venue.swift */; };
 		1695A04722336BEC00418E5C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1695A04622336BEC00418E5C /* EventDetailViewController.swift */; };
 		1695A04C2235842E00418E5C /* filterIcon_barButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1695A04B2235842E00418E5C /* filterIcon_barButton.png */; };
+		1695A04E2238967700418E5C /* defaultProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1695A04D2238967700418E5C /* defaultProfileIcon.png */; };
 		16AFBB46221854AF00FE9CD0 /* livePhillyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */; };
 		16AFBB4A221B06AA00FE9CD0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */; };
 		16AFBB4D221B0B0200FE9CD0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */; };
@@ -40,6 +42,7 @@
 		107E28F08C3E534A13B5C148 /* Pods_LivePhillyiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhillyiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16477A2022218BCF00CB1087 /* parkwayLogoDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkwayLogoDark.png; sourceTree = "<group>"; };
 		16477A2422232D3E00CB1087 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		166DEE96225169EF00D851D1 /* MyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
 		167567762224E8CC006A0448 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "../../Downloads/fastlane 2/.gitignore"; sourceTree = "<group>"; };
 		167567772224E8CC006A0448 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		167567782224E8CC006A0448 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		1695A04622336BEC00418E5C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		1695A04A223401CF00418E5C /* filterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filterIcon.png; path = /Users/jeffcunningham/iOSProjects/LivePhillyiOS/LivePhillyiOS/filterIcon.png; sourceTree = "<absolute>"; };
 		1695A04B2235842E00418E5C /* filterIcon_barButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filterIcon_barButton.png; sourceTree = "<group>"; };
+		1695A04D2238967700418E5C /* defaultProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultProfileIcon.png; sourceTree = "<group>"; };
 		16AFBB45221854AF00FE9CD0 /* livePhillyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = livePhillyLogo.png; sourceTree = "<group>"; };
 		16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				167CE30A2201292B00E1B470 /* Main.storyboard */,
+				1695A04D2238967700418E5C /* defaultProfileIcon.png */,
 				167CE32C22076B6600E1B470 /* ExploreTableViewCell.swift */,
 				167CE32D22076B6600E1B470 /* ExploreTableViewCell.xib */,
 				16AFBB4B221B0B0200FE9CD0 /* EventTableViewCell.swift */,
@@ -155,6 +160,7 @@
 				16AFBB49221B06AA00FE9CD0 /* EventListViewController.swift */,
 				16477A2422232D3E00CB1087 /* AuthViewController.swift */,
 				1695A04622336BEC00418E5C /* EventDetailViewController.swift */,
+				166DEE96225169EF00D851D1 /* MyEventsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				167CE321220135B900E1B470 /* GoogleService-Info.plist in Resources */,
 				167CE30E2201292D00E1B470 /* Assets.xcassets in Resources */,
 				167CE32F22076B6600E1B470 /* ExploreTableViewCell.xib in Resources */,
+				1695A04E2238967700418E5C /* defaultProfileIcon.png in Resources */,
 				16AFBB4E221B0B0200FE9CD0 /* EventTableViewCell.xib in Resources */,
 				16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */,
 				167CE30C2201292B00E1B470 /* Main.storyboard in Resources */,
@@ -383,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AFBB4D221B0B0200FE9CD0 /* EventTableViewCell.swift in Sources */,
+				166DEE97225169EF00D851D1 /* MyEventsViewController.swift in Sources */,
 				167CE31D2201324100E1B470 /* LoginViewController.swift in Sources */,
 				16AFBB4A221B06AA00FE9CD0 /* EventListViewController.swift in Sources */,
 				167CE33222077D7B00E1B470 /* Venue.swift in Sources */,

@@ -16,6 +16,7 @@ class EventDetailViewController: UIViewController {
     var db = Firestore.firestore()
     var isRSVPd = false
     
+    @IBOutlet var venueLocationLabel: UILabel!
     @IBOutlet var eventImageView: UIImageView!
     @IBOutlet var eventTitleLabel: UILabel!
     @IBOutlet var eventDescriptionLabel: UILabel!
@@ -36,10 +37,18 @@ class EventDetailViewController: UIViewController {
         eventTitleLabel.text = event.title
         eventDescriptionLabel.text = event.description
         
+        //build location label
+        var locationLabelText: String
+        locationLabelText = event.venueDictionary.object(forKey: "name") as? String ?? ""
+        let venueLocationDictionary = event.venueDictionary.object(forKey: "location") as? NSDictionary
+        for addressField in venueLocationDictionary?.object(forKey: "display_address") as? [String] ?? [String](){
+            locationLabelText = locationLabelText + ", " + addressField
+        }
+        venueLocationLabel.text = locationLabelText
+        
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(EventDetailViewController.rsvpClicked))
         rsvpEventImage.isUserInteractionEnabled = true
         rsvpEventImage.addGestureRecognizer(singleTap)
-        
     }
     
     func fetchRsvpSetting(){

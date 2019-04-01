@@ -20,6 +20,11 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
     
     @IBOutlet var eventTableView: UITableView!
     
+    @IBOutlet var eventTableTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var eventTableLeadingConstraint: NSLayoutConstraint!
+    
+    var myAccountDrawerIsVisible: Bool = false
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -29,13 +34,41 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         let button1 = UIBarButtonItem(image: UIImage(named: "filterIcon_barButton"), style: .plain, target: self, action: #selector(openFilter))
         self.navigationItem.rightBarButtonItem  = button1
         
+        let profileBarButton = UIBarButtonItem(image: UIImage(named: "defaultProfileIcon"), style: .plain, target: self, action: #selector(openAccountDrawer))
+        self.navigationItem.leftBarButtonItem = profileBarButton
         
+        
+        fetchData()
+    }
+    
+    override func viewDidAppear(_ animated:Bool){
         fetchData()
     }
     
     @objc
     func openFilter(){
         print("open filter clicked")
+        
+    }
+    
+    @objc
+    func openAccountDrawer(){
+        print("open drawer clicked")
+        if (!myAccountDrawerIsVisible){
+            UIView.animate(withDuration: 0.40, delay:0.0, options:[.curveEaseInOut],animations:{
+                self.eventTableLeadingConstraint.constant = 150
+                self.eventTableTrailingConstraint.constant = 150
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            myAccountDrawerIsVisible = true
+        } else {
+            UIView.animate(withDuration: 0.40, delay:0.0, options:[.curveEaseInOut],animations:{
+                self.eventTableLeadingConstraint.constant = 0
+                self.eventTableTrailingConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }, completion:nil)
+            myAccountDrawerIsVisible = false
+        }
     }
     
     func fetchData(){
@@ -112,9 +145,27 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
             dateFormatter.dateFormat = "dd"
             let day = dateFormatter.string(from: dateParsed)
             cell.eventDateLabel.text = day + "\n" + monthAbbrev
+            
+            dateFormatter.dateFormat = "h:mm a', ' MMMM d, yyyy"
+            dateFormatter.amSymbol = "AM"
+            dateFormatter.pmSymbol = "PM"
+            let shortDate = dateFormatter.string(from: dateParsed)
+            cell.eventTimeLabel.text = shortDate
         } else {
             cell.eventDateLabel.text = "TBD"
         }
+        
+        //build location label
+        var locationLabel: String
+        locationLabel = events[indexPath.row].venueDictionary.object(forKey: "name") as? String ?? ""
+        let venueLocationDictionary = events[indexPath.row].venueDictionary.object(forKey: "location") as? NSDictionary
+        
+        for addressField in venueLocationDictionary?.object(forKey: "display_address") as? [String] ?? [String](){
+            locationLabel = locationLabel + ", " + addressField
+        }
+        
+        cell.eventLocationLabel.text = locationLabel
+        
         
         let url = URL(string: events[indexPath.row].imageUrl)
         cell.eventImageView.kf.setImage(with: url)
@@ -125,7 +176,7 @@ class EventListViewController: UIViewController,  UITableViewDelegate, UITableVi
         eventToPass = events[indexPath.row]
         self.performSegue(withIdentifier: "EventListToDetail", sender: self)
     }
-
+    
     
     func configureTableView(){
         eventTableView.rowHeight = UITableView.automaticDimension
