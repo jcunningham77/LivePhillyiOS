@@ -9,6 +9,8 @@
 import UIKit
 import PKHUD
 import Firebase
+import CoreData
+
 
 class EventDetailViewController: UIViewController {
     
@@ -100,6 +102,59 @@ class EventDetailViewController: UIViewController {
                         print("Error adding document: \(err)")
                     } else {
                         print("Document added with ID: \(ref!.documentID)")
+                        
+                        // persist the RSVP record to the database
+                        var storedRSVPs: [NSManagedObject] = []
+                        
+                        guard let appDelegate =
+                            UIApplication.shared.delegate as? AppDelegate else {
+                                return
+                        }
+                        // 1
+                        let managedContext =
+                            appDelegate.persistentContainer.viewContext
+                        
+                        // 2
+                        let entity =
+                            NSEntityDescription.entity(forEntityName: "RSVP",
+                                                       in: managedContext)!
+                        
+                        let rsvp = NSManagedObject(entity: entity,
+                                                     insertInto: managedContext)
+                        
+                        rsvp.setValue(self.event.id, forKeyPath: "event_id")
+                        rsvp.setValue(ref!.documentID, forKeyPath: "rsvp_id")
+                        
+                        let venueId = self.event.venueDictionary.object(forKey: "id") as? String ?? ""
+                        rsvp.setValue(venueId, forKeyPath: "venue_id")
+                        
+                        let coordinatesDictionary = self.event.venueDictionary.object(forKey: "coordinates") as? NSDictionary
+                        
+                        let latitude = coordinatesDictionary?.object(forKey: "latitude") as? Float ?? Float()
+                        let longitude = coordinatesDictionary?.object(forKey: "longitude") as? Float ?? Float()
+                        
+                        rsvp.setValue(latitude, forKeyPath: "latitude")
+                        rsvp.setValue(longitude, forKeyPath: "longitude")
+                        
+                        
+                        // fetch existing rsvp's to append to
+                        let fetchRequest =
+                            NSFetchRequest<NSManagedObject>(entityName: "RSVP")
+                        
+                        //3
+                        do {
+                            storedRSVPs = try managedContext.fetch(fetchRequest)
+                        } catch let error as NSError {
+                            print("Could not fetch. \(error), \(error.userInfo)")
+                        }
+                        
+                        // 4
+                        do {
+                            try managedContext.save()
+                            storedRSVPs.append(rsvp)
+                        } catch let error as NSError {
+                            print("Could not save. \(error), \(error.userInfo)")
+                        }
                     }
                 }
             } else {

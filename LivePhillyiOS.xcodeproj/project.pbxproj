@@ -10,6 +10,7 @@
 		16477A2122218BCF00CB1087 /* parkwayLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 16477A2022218BCF00CB1087 /* parkwayLogoDark.png */; };
 		16477A2522232D3E00CB1087 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16477A2422232D3E00CB1087 /* AuthViewController.swift */; };
 		166DEE97225169EF00D851D1 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DEE96225169EF00D851D1 /* MyEventsViewController.swift */; };
+		166DEE9B2252FEB200D851D1 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 166DEE992252FEB200D851D1 /* CoreData.xcdatamodeld */; };
 		1675677A2224E8E1006A0448 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 167567762224E8CC006A0448 /* .gitignore */; };
 		1675677B2224E8E1006A0448 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567772224E8CC006A0448 /* Fastfile */; };
 		1675677C2224E8E1006A0448 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 167567782224E8CC006A0448 /* Appfile */; };
@@ -43,6 +44,7 @@
 		16477A2022218BCF00CB1087 /* parkwayLogoDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkwayLogoDark.png; sourceTree = "<group>"; };
 		16477A2422232D3E00CB1087 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		166DEE96225169EF00D851D1 /* MyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
+		166DEE9A2252FEB200D851D1 /* RSVPs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSVPs.xcdatamodel; sourceTree = "<group>"; };
 		167567762224E8CC006A0448 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "../../Downloads/fastlane 2/.gitignore"; sourceTree = "<group>"; };
 		167567772224E8CC006A0448 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		167567782224E8CC006A0448 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		166DEE982252FE7300D851D1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				166DEE992252FEB200D851D1 /* CoreData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		1675677E2224EB30006A0448 /* fastlane */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 		167CE33022077D4A00E1B470 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				166DEE982252FE7300D851D1 /* CoreData */,
 				167CE33122077D7B00E1B470 /* Venue.swift */,
 				167812B8222F32C900BD1DCB /* FBEvent.swift */,
 			);
@@ -397,6 +408,7 @@
 				167CE31F2201328000E1B470 /* RegisterViewController.swift in Sources */,
 				167CE32E22076B6600E1B470 /* ExploreTableViewCell.swift in Sources */,
 				167CE31B2201320900E1B470 /* WelcomeViewController.swift in Sources */,
+				166DEE9B2252FEB200D851D1 /* CoreData.xcdatamodeld in Sources */,
 				167CE329220638F700E1B470 /* ExploreViewController.swift in Sources */,
 				167812B9222F32C900BD1DCB /* FBEvent.swift in Sources */,
 				16477A2522232D3E00CB1087 /* AuthViewController.swift in Sources */,
@@ -611,6 +623,19 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		166DEE992252FEB200D851D1 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				166DEE9A2252FEB200D851D1 /* RSVPs.xcdatamodel */,
+			);
+			currentVersion = 166DEE9A2252FEB200D851D1 /* RSVPs.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 167CE2FB2201292B00E1B470 /* Project object */;
 }
